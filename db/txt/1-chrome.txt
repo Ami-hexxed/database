@@ -1,0 +1,8 @@
+This is a sample text file representing '1-chrome.txt'.
+
+It contains placeholder content to demonstrate the plain-text file viewer.
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero.
+Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum.
+
+End of sample.

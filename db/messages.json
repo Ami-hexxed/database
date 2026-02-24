@@ -1,0 +1,11 @@
+{
+  "variant": "scroll",
+  "title": "messages",
+  "filetype": "txt",
+  "folder": "messages",
+  "return": "db/db.json",
+  "autoload": true,
+  "items": [
+    { "label": "RETURN", "type": "return", "target": "db/db.json" }
+  ]
+}

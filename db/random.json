@@ -1,0 +1,11 @@
+{
+  "variant": "scroll",
+  "title": "random",
+  "filetype": "txt",
+  "folder": "random",
+  "return": "db/db.json",
+  "autoload": true,
+  "items": [
+    { "label": "RETURN", "type": "return", "target": "db/db.json" }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "variant": "scroll",
+  "title": "audio",
+  "filetype": "audio",
+  "folder": "mp3",
+  "return": "db/db.json",
+  "autoload": true,
+  "items": [
+    { "label": "RETURN", "type": "return", "target": "db/db.json" }
+  ]
+}

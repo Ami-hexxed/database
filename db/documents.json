@@ -1,0 +1,11 @@
+{
+  "variant": "scroll",
+  "title": "documents",
+  "filetype": "md",
+  "folder": "md",
+  "return": "db/db.json",
+  "autoload": true,
+  "items": [
+    { "label": "RETURN", "type": "return", "target": "db/db.json" }
+  ]
+}

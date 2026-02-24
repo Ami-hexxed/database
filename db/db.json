@@ -1,0 +1,14 @@
+{
+  "variant": "locked",
+  "title": "db",
+  "return": "index.html",
+  "items": [
+    { "label": "EXIT", "type": "return", "target": "index.html" },
+    { "label": "plain-text/", "type": "menu", "target": "db/plain-text.json" },
+    { "label": "documents/", "type": "menu", "target": "db/documents.json" },
+    { "label": "images/", "type": "menu", "target": "db/images.json" },
+    { "label": "audio/", "type": "menu", "target": "db/audio.json" },
+    { "label": "messages/", "type": "menu", "target": "db/messages.json" },
+    { "label": "random/", "type": "menu", "target": "db/random.json" }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "variant": "scroll",
+  "title": "images",
+  "filetype": "image",
+  "folder": "png",
+  "return": "db/db.json",
+  "autoload": true,
+  "items": [
+    { "label": "RETURN", "type": "return", "target": "db/db.json" }
+  ]
+}
