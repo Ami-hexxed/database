@@ -1,1 +1,5 @@
-["hello.txt","pixie1.txt","pixie2.txt"]
+[
+    "hello.txt",
+    "pixie1.txt",
+    "pixie2.txt"
+]

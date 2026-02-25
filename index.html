@@ -3,27 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Database</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Orbitron:wght@400;600&display=swap" rel="stylesheet">
 </head>
-<body class="main-page">
-    <div class="main">
-        <div class="top-layer">
-            <img src="assets/main/WindowPainting.png" alt="test 1" data-default="assets/main/WindowPainting.png" data-active="assets/main/WindowPaintingActive.png" data-href="window.html" draggable="false">
-            <img src="assets/main/testing.png" alt="test 2" data-default="assets/main/testing.png" data-active="assets/main/testing2.png" draggable="false" data-href="livingroom.html">
-            <img src="assets/main/testing.png" alt="test 3" data-default="assets/main/testing.png" data-active="assets/main/testing2.png" draggable="false">
-            <img src="assets/main/testing.png" alt="test 4" data-default="assets/main/testing.png" data-active="assets/main/testing2.png" draggable="false">
-            <img src="assets/main/testing.png" alt="test 5" data-default="assets/main/testing.png" data-active="assets/main/testing2.png" draggable="false">
+<body class="database-page">
+        <div class="db-container">
+            <div class="menu-column">
+<div class="menu-root">
+                    <ul id="menuList" class="menu-list" aria-label="database-menu"></ul>
+                </div>
+                <div class="instructions">
+                    <span class="line">Use ↑ ↓ to navigate</span>
+                    <span class="line">Enter to select</span>
+                    <span class="line">Backspace to return</span>
+                </div>
+            </div>
+            <div class="viewer-column">
+                <div id="fileView" class="file-view">
+                    <div id="fileHeader" class="file-header"></div>
+                    <div class="file-scrollbar-container">
+                        <div id="fileContent" class="file-content"></div>
+                        <div class="file-scrollbar"></div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="bottom-layer">
-            <img src="assets/main/testing.png" alt="test 6" data-default="assets/main/testing.png" data-active="assets/main/testing2.png" draggable="false">
-            <img src="assets/main/testing.png" alt="test 7" data-default="assets/main/testing.png" data-active="assets/main/testing2.png" draggable="false">
-            <img src="assets/main/testing.png" alt="test 8" data-default="assets/main/testing.png" data-active="assets/main/testing2.png" draggable="false">
-            <img src="assets/main/DatabasePainting.png" alt="test 9" data-default="assets/main/DatabasePainting.png" data-active="assets/main/DatabasePaintingActive.png" draggable="false" data-href="database.html">
-            <img src="assets/main/testing.png" alt="test 10" data-default="assets/main/testing.png" data-active="assets/main/testing2.png" draggable="false">
+        
+        <!-- Search Modal -->
+        <div id="searchModal" class="search-modal">
+            <div class="search-modal-content">
+                <input type="text" id="searchInput" class="search-input" placeholder="Search files..." autocomplete="off">
+                <div class="search-hint">Press ENTER to search, ESC to close</div>
+            </div>
         </div>
-    </div>
-    <div class="footer"></div>
-    <script src="script.js"></script>
+        
+        <!-- Command Modal -->
+        <div id="commandModal" class="search-modal">
+            <div class="search-modal-content">
+                <input type="text" id="commandInput" class="search-input" placeholder="Enter code..." autocomplete="off">
+                <div class="search-hint">Press ENTER to submit, ESC to close</div>
+            </div>
+        </div>
+        
+    <script src="script.js" defer></script>
 </body>
 </html>
