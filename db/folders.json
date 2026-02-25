@@ -1,10 +1,11 @@
 [
-    "md:yellow",
-    "mp3:cyan",
-    "png",
-    "messages:red",
-    "random",
-    "txt:orange",
-    "fold:purple",
-    "secret:hidden3"
+    "vanguard:red",
+    "people",
+    "organizations",
+    "locations",
+    "lifeforms",
+    "technology",
+    "events",
+    "index",
+    "secret:hidden1"
 ]

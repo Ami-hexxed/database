@@ -10,6 +10,8 @@
   let searchResults = [];
   let specialAccessLevel = 0;
   let isCommandMode = false;
+  // Navigation history to remember selected position at each path level
+  const navigationHistory = {};
   const fileView = document.getElementById('fileView');
   const fileHeader = document.getElementById('fileHeader');
   const fileContent = document.getElementById('fileContent');
@@ -848,7 +850,23 @@
     }
     else if(e.key==='Backspace'){ 
       e.preventDefault(); 
-      if(pathParts.length>0){ pathParts.pop(); selected=0; applyTheme('green');  refresh(); } 
+      if(pathParts.length>0){ 
+        playSound('assets/sounds/blip.mp3','blip');
+        
+        // Save current position before going back
+        const currentPathKey = pathParts.join('/');
+        navigationHistory[currentPathKey] = selected;
+        
+        // Go back to previous path
+        pathParts.pop();
+        
+        // Restore the selected position from history, or default to 0
+        const prevPathKey = pathParts.join('/');
+        selected = navigationHistory[prevPathKey] !== undefined ? navigationHistory[prevPathKey] : 0;
+        
+        applyTheme('green');  
+        refresh(); 
+      } 
     }
   }
 
@@ -902,8 +920,12 @@
           applyTheme('green');
         }
         
+        // Save current position to history before navigating into folder
+        const currentPathKey = pathParts.join('/');
+        navigationHistory[currentPathKey] = selected;
+        
         pathParts.push(parsed.name); 
-        selected=0; 
+        selected = navigationHistory[pathParts.join('/')] !== undefined ? navigationHistory[pathParts.join('/')] : 0;
         
         refresh(); 
         return; 
