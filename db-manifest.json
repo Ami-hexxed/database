@@ -2,929 +2,2580 @@
   "name": "db",
   "folders": [
     {
-      "name": "events",
-      "folders": [
-        {
-          "name": "anomalous",
-          "folders": [],
-          "files": []
-        },
-        {
-          "name": "historical",
-          "folders": [],
-          "files": [
-            "pixie.txt"
-          ]
-        },
-        {
-          "name": "major-incidents",
-          "folders": [],
-          "files": [
-            "pixie.txt:hidden2"
-          ]
-        },
-        {
-          "name": "minor-incidents",
-          "folders": [],
-          "files": []
-        },
-        {
-          "name": "training",
-          "folders": [],
-          "files": []
-        }
-      ],
-      "files": []
-    },
-    {
-      "name": "index",
-      "folders": [
-        {
-          "name": "alien",
-          "folders": [],
-          "files": []
-        },
-        {
-          "name": "conceptuals",
-          "folders": [],
-          "files": []
-        },
-        {
-          "name": "gifted",
-          "folders": [],
-          "files": []
-        },
-        {
-          "name": "mutates",
-          "folders": [],
-          "files": []
-        },
-        {
-          "name": "other",
-          "folders": [],
-          "files": []
-        },
-        {
-          "name": "sorcerers",
-          "folders": [],
-          "files": []
-        },
-        {
-          "name": "summoners",
-          "folders": [],
-          "files": []
-        },
-        {
-          "name": "tech",
-          "folders": [],
-          "files": []
-        },
-        {
-          "name": "vessels",
-          "folders": [],
-          "files": []
-        },
-        {
-          "name": "wielders",
-          "folders": [],
-          "files": []
-        },
-        {
-          "name": "witches",
-          "folders": [],
-          "files": [
-            "pixie.md:hidden1"
-          ]
-        }
-      ],
-      "files": []
-    },
-    {
-      "name": "lifeforms",
-      "folders": [
-        {
-          "name": "animals",
-          "folders": [],
-          "files": []
-        },
-        {
-          "name": "other",
-          "folders": [],
-          "files": []
-        },
-        {
-          "name": "people",
-          "folders": [],
-          "files": []
-        },
-        {
-          "name": "plants",
-          "folders": [],
-          "files": []
-        }
-      ],
-      "files": []
-    },
-    {
-      "name": "locations",
-      "folders": [
-        {
-          "name": "alien",
-          "folders": [
-            {
-              "name": "moons",
-              "folders": [],
-              "files": []
+      "original": "vanguard:white",
+      "parsed": {
+        "name": "vanguard",
+        "theme": "white",
+        "hiddenLevel": 0
+      },
+      "sub": {
+        "name": "vanguard",
+        "folders": [
+          {
+            "original": "rulebook:purple",
+            "parsed": {
+              "name": "rulebook",
+              "theme": "purple",
+              "hiddenLevel": 0
             },
-            {
-              "name": "other",
+            "sub": {
+              "name": "rulebook",
               "folders": [],
-              "files": []
+              "files": [
+                {
+                  "original": "yo.txt",
+                  "parsed": {
+                    "name": "yo.txt",
+                    "hiddenLevel": 0,
+                    "lockedLevel": 0
+                  }
+                },
+                {
+                  "original": "hey.txt",
+                  "parsed": {
+                    "name": "hey.txt",
+                    "hiddenLevel": 0,
+                    "lockedLevel": 0
+                  }
+                },
+                {
+                  "original": "rawr.txt",
+                  "parsed": {
+                    "name": "rawr.txt",
+                    "hiddenLevel": 0,
+                    "lockedLevel": 0
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "original": "sites",
+            "parsed": {
+              "name": "sites",
+              "theme": null,
+              "hiddenLevel": 0
             },
-            {
-              "name": "planets",
-              "folders": [],
-              "files": []
-            },
-            {
-              "name": "structures",
-              "folders": [],
-              "files": []
-            },
-            {
-              "name": "systems",
+            "sub": {
+              "name": "sites",
               "folders": [],
               "files": []
             }
-          ],
-          "files": []
-        },
-        {
-          "name": "anomalous",
-          "folders": [],
-          "files": []
-        },
-        {
-          "name": "other",
-          "folders": [],
-          "files": []
-        },
-        {
-          "name": "strategic",
-          "folders": [
-            {
+          },
+          {
+            "original": "personnel",
+            "parsed": {
+              "name": "personnel",
+              "theme": null,
+              "hiddenLevel": 0
+            },
+            "sub": {
+              "name": "personnel",
+              "folders": [
+                {
+                  "original": "active",
+                  "parsed": {
+                    "name": "active",
+                    "theme": null,
+                    "hiddenLevel": 0
+                  },
+                  "sub": {
+                    "name": "active",
+                    "folders": [
+                      {
+                        "original": "level1",
+                        "parsed": {
+                          "name": "level1",
+                          "theme": null,
+                          "hiddenLevel": 0
+                        },
+                        "sub": {
+                          "name": "level1",
+                          "folders": [],
+                          "files": []
+                        }
+                      },
+                      {
+                        "original": "level2",
+                        "parsed": {
+                          "name": "level2",
+                          "theme": null,
+                          "hiddenLevel": 0
+                        },
+                        "sub": {
+                          "name": "level2",
+                          "folders": [],
+                          "files": []
+                        }
+                      },
+                      {
+                        "original": "level3",
+                        "parsed": {
+                          "name": "level3",
+                          "theme": null,
+                          "hiddenLevel": 0
+                        },
+                        "sub": {
+                          "name": "level3",
+                          "folders": [],
+                          "files": []
+                        }
+                      },
+                      {
+                        "original": "level4",
+                        "parsed": {
+                          "name": "level4",
+                          "theme": null,
+                          "hiddenLevel": 0
+                        },
+                        "sub": {
+                          "name": "level4",
+                          "folders": [],
+                          "files": []
+                        }
+                      },
+                      {
+                        "original": "level5",
+                        "parsed": {
+                          "name": "level5",
+                          "theme": null,
+                          "hiddenLevel": 0
+                        },
+                        "sub": {
+                          "name": "level5",
+                          "folders": [],
+                          "files": []
+                        }
+                      },
+                      {
+                        "original": "level6",
+                        "parsed": {
+                          "name": "level6",
+                          "theme": null,
+                          "hiddenLevel": 0
+                        },
+                        "sub": {
+                          "name": "level6",
+                          "folders": [],
+                          "files": []
+                        }
+                      },
+                      {
+                        "original": "level7",
+                        "parsed": {
+                          "name": "level7",
+                          "theme": null,
+                          "hiddenLevel": 0
+                        },
+                        "sub": {
+                          "name": "level7",
+                          "folders": [],
+                          "files": []
+                        }
+                      },
+                      {
+                        "original": "level8",
+                        "parsed": {
+                          "name": "level8",
+                          "theme": null,
+                          "hiddenLevel": 0
+                        },
+                        "sub": {
+                          "name": "level8",
+                          "folders": [],
+                          "files": []
+                        }
+                      },
+                      {
+                        "original": "level9",
+                        "parsed": {
+                          "name": "level9",
+                          "theme": null,
+                          "hiddenLevel": 0
+                        },
+                        "sub": {
+                          "name": "level9",
+                          "folders": [],
+                          "files": []
+                        }
+                      },
+                      {
+                        "original": "level10",
+                        "parsed": {
+                          "name": "level10",
+                          "theme": null,
+                          "hiddenLevel": 0
+                        },
+                        "sub": {
+                          "name": "level10",
+                          "folders": [],
+                          "files": []
+                        }
+                      },
+                      {
+                        "original": "level11",
+                        "parsed": {
+                          "name": "level11",
+                          "theme": null,
+                          "hiddenLevel": 0
+                        },
+                        "sub": {
+                          "name": "level11",
+                          "folders": [],
+                          "files": []
+                        }
+                      },
+                      {
+                        "original": "level12:hidden4",
+                        "parsed": {
+                          "name": "level12",
+                          "theme": null,
+                          "hiddenLevel": 4
+                        },
+                        "sub": {
+                          "name": "level12",
+                          "folders": [],
+                          "files": [
+                            {
+                              "original": "council.txt:hidden4,locked3",
+                              "parsed": {
+                                "name": "council.txt",
+                                "hiddenLevel": 4,
+                                "lockedLevel": 3
+                              }
+                            },
+                            {
+                              "original": "council-history.txt:hidden4,locked4",
+                              "parsed": {
+                                "name": "council-history.txt",
+                                "hiddenLevel": 4,
+                                "lockedLevel": 4
+                              }
+                            },
+                            {
+                              "original": "19-07-1880.txt:hidden4,locked4",
+                              "parsed": {
+                                "name": "19-07-1880.txt",
+                                "hiddenLevel": 4,
+                                "lockedLevel": 4
+                              }
+                            },
+                            {
+                              "original": "12-1.txt:hidden4,locked4",
+                              "parsed": {
+                                "name": "12-1.txt",
+                                "hiddenLevel": 4,
+                                "lockedLevel": 4
+                              }
+                            },
+                            {
+                              "original": "12-1.md:hidden4,locked4",
+                              "parsed": {
+                                "name": "12-1.md",
+                                "hiddenLevel": 4,
+                                "lockedLevel": 4
+                              }
+                            },
+                            {
+                              "original": "12-2.txt:hidden4,locked4",
+                              "parsed": {
+                                "name": "12-2.txt",
+                                "hiddenLevel": 4,
+                                "lockedLevel": 4
+                              }
+                            },
+                            {
+                              "original": "12-2.md:hidden4,locked4",
+                              "parsed": {
+                                "name": "12-2.md",
+                                "hiddenLevel": 4,
+                                "lockedLevel": 4
+                              }
+                            },
+                            {
+                              "original": "12-3.txt:hidden4,locked4",
+                              "parsed": {
+                                "name": "12-3.txt",
+                                "hiddenLevel": 4,
+                                "lockedLevel": 4
+                              }
+                            },
+                            {
+                              "original": "12-3.md:hidden4,locked4",
+                              "parsed": {
+                                "name": "12-3.md",
+                                "hiddenLevel": 4,
+                                "lockedLevel": 4
+                              }
+                            },
+                            {
+                              "original": "12-4.txt:hidden4,locked4",
+                              "parsed": {
+                                "name": "12-4.txt",
+                                "hiddenLevel": 4,
+                                "lockedLevel": 4
+                              }
+                            },
+                            {
+                              "original": "12-4.md:hidden4,locked4",
+                              "parsed": {
+                                "name": "12-4.md",
+                                "hiddenLevel": 4,
+                                "lockedLevel": 4
+                              }
+                            },
+                            {
+                              "original": "12-5.txt:hidden4,locked4",
+                              "parsed": {
+                                "name": "12-5.txt",
+                                "hiddenLevel": 4,
+                                "lockedLevel": 4
+                              }
+                            },
+                            {
+                              "original": "12-5.md:hidden4,locked4",
+                              "parsed": {
+                                "name": "12-5.md",
+                                "hiddenLevel": 4,
+                                "lockedLevel": 4
+                              }
+                            },
+                            {
+                              "original": "12-6.txt:hidden4,locked4",
+                              "parsed": {
+                                "name": "12-6.txt",
+                                "hiddenLevel": 4,
+                                "lockedLevel": 4
+                              }
+                            },
+                            {
+                              "original": "12-6.md:hidden4,locked4",
+                              "parsed": {
+                                "name": "12-6.md",
+                                "hiddenLevel": 4,
+                                "lockedLevel": 4
+                              }
+                            },
+                            {
+                              "original": "12-7.txt:hidden4,locked4",
+                              "parsed": {
+                                "name": "12-7.txt",
+                                "hiddenLevel": 4,
+                                "lockedLevel": 4
+                              }
+                            },
+                            {
+                              "original": "12-7.md:hidden4,locked4",
+                              "parsed": {
+                                "name": "12-7.md",
+                                "hiddenLevel": 4,
+                                "lockedLevel": 4
+                              }
+                            },
+                            {
+                              "original": "12-8.txt:hidden4,locked4",
+                              "parsed": {
+                                "name": "12-8.txt",
+                                "hiddenLevel": 4,
+                                "lockedLevel": 4
+                              }
+                            },
+                            {
+                              "original": "12-8.md:hidden4,locked4",
+                              "parsed": {
+                                "name": "12-8.md",
+                                "hiddenLevel": 4,
+                                "lockedLevel": 4
+                              }
+                            },
+                            {
+                              "original": "12-9.txt:hidden4,locked4",
+                              "parsed": {
+                                "name": "12-9.txt",
+                                "hiddenLevel": 4,
+                                "lockedLevel": 4
+                              }
+                            },
+                            {
+                              "original": "12-9.md:hidden4,locked4",
+                              "parsed": {
+                                "name": "12-9.md",
+                                "hiddenLevel": 4,
+                                "lockedLevel": 4
+                              }
+                            },
+                            {
+                              "original": "12-1-truth.txt:hidden4,locked5",
+                              "parsed": {
+                                "name": "12-1-truth.txt",
+                                "hiddenLevel": 4,
+                                "lockedLevel": 5
+                              }
+                            },
+                            {
+                              "original": "12-2-truth.txt:hidden4,locked5",
+                              "parsed": {
+                                "name": "12-2-truth.txt",
+                                "hiddenLevel": 4,
+                                "lockedLevel": 5
+                              }
+                            },
+                            {
+                              "original": "12-3-truth.txt:hidden4,locked5",
+                              "parsed": {
+                                "name": "12-3-truth.txt",
+                                "hiddenLevel": 4,
+                                "lockedLevel": 5
+                              }
+                            },
+                            {
+                              "original": "12-4-truth.txt:hidden4,locked5",
+                              "parsed": {
+                                "name": "12-4-truth.txt",
+                                "hiddenLevel": 4,
+                                "lockedLevel": 5
+                              }
+                            },
+                            {
+                              "original": "12-5-truth.txt:hidden4,locked5",
+                              "parsed": {
+                                "name": "12-5-truth.txt",
+                                "hiddenLevel": 4,
+                                "lockedLevel": 5
+                              }
+                            },
+                            {
+                              "original": "12-6-truth.txt:hidden4,locked5",
+                              "parsed": {
+                                "name": "12-6-truth.txt",
+                                "hiddenLevel": 4,
+                                "lockedLevel": 5
+                              }
+                            },
+                            {
+                              "original": "12-7-truth.txt:hidden4,locked5",
+                              "parsed": {
+                                "name": "12-7-truth.txt",
+                                "hiddenLevel": 4,
+                                "lockedLevel": 5
+                              }
+                            },
+                            {
+                              "original": "12-8-truth.txt:hidden4,locked5",
+                              "parsed": {
+                                "name": "12-8-truth.txt",
+                                "hiddenLevel": 4,
+                                "lockedLevel": 5
+                              }
+                            },
+                            {
+                              "original": "12-9-truth.txt:hidden4,locked5",
+                              "parsed": {
+                                "name": "12-9-truth.txt",
+                                "hiddenLevel": 4,
+                                "lockedLevel": 5
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "original": "level13:hidden5",
+                        "parsed": {
+                          "name": "level13",
+                          "theme": null,
+                          "hiddenLevel": 5
+                        },
+                        "sub": {
+                          "name": "level13",
+                          "folders": [],
+                          "files": [
+                            {
+                              "original": "the-director.txt:hidden5,locked5",
+                              "parsed": {
+                                "name": "the-director.txt",
+                                "hiddenLevel": 5,
+                                "lockedLevel": 5
+                              }
+                            },
+                            {
+                              "original": "the-director.md:hidden5,locked5",
+                              "parsed": {
+                                "name": "the-director.md",
+                                "hiddenLevel": 5,
+                                "lockedLevel": 5
+                              }
+                            },
+                            {
+                              "original": "870442-dir.txt:hidden5,locked5",
+                              "parsed": {
+                                "name": "870442-dir.txt",
+                                "hiddenLevel": 5,
+                                "lockedLevel": 5
+                              }
+                            },
+                            {
+                              "original": "01-01-1854.txt:hidden5,locked5",
+                              "parsed": {
+                                "name": "01-01-1854.txt",
+                                "hiddenLevel": 5,
+                                "lockedLevel": 5
+                              }
+                            },
+                            {
+                              "original": "15-04-1872.txt:hidden5,locked5",
+                              "parsed": {
+                                "name": "15-04-1872.txt",
+                                "hiddenLevel": 5,
+                                "lockedLevel": 5
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ],
+                    "files": []
+                  }
+                },
+                {
+                  "original": "former",
+                  "parsed": {
+                    "name": "former",
+                    "theme": null,
+                    "hiddenLevel": 0
+                  },
+                  "sub": {
+                    "name": "former",
+                    "folders": [
+                      {
+                        "original": "retired",
+                        "parsed": {
+                          "name": "retired",
+                          "theme": null,
+                          "hiddenLevel": 0
+                        },
+                        "sub": {
+                          "name": "retired",
+                          "folders": [],
+                          "files": []
+                        }
+                      },
+                      {
+                        "original": "fired",
+                        "parsed": {
+                          "name": "fired",
+                          "theme": null,
+                          "hiddenLevel": 0
+                        },
+                        "sub": {
+                          "name": "fired",
+                          "folders": [],
+                          "files": []
+                        }
+                      },
+                      {
+                        "original": "deceased",
+                        "parsed": {
+                          "name": "deceased",
+                          "theme": null,
+                          "hiddenLevel": 0
+                        },
+                        "sub": {
+                          "name": "deceased",
+                          "folders": [],
+                          "files": []
+                        }
+                      },
+                      {
+                        "original": "defected",
+                        "parsed": {
+                          "name": "defected",
+                          "theme": null,
+                          "hiddenLevel": 0
+                        },
+                        "sub": {
+                          "name": "defected",
+                          "folders": [],
+                          "files": []
+                        }
+                      },
+                      {
+                        "original": "missing",
+                        "parsed": {
+                          "name": "missing",
+                          "theme": null,
+                          "hiddenLevel": 0
+                        },
+                        "sub": {
+                          "name": "missing",
+                          "folders": [],
+                          "files": []
+                        }
+                      },
+                      {
+                        "original": "other",
+                        "parsed": {
+                          "name": "other",
+                          "theme": null,
+                          "hiddenLevel": 0
+                        },
+                        "sub": {
+                          "name": "other",
+                          "folders": [],
+                          "files": []
+                        }
+                      }
+                    ],
+                    "files": []
+                  }
+                },
+                {
+                  "original": "candidates",
+                  "parsed": {
+                    "name": "candidates",
+                    "theme": null,
+                    "hiddenLevel": 0
+                  },
+                  "sub": {
+                    "name": "candidates",
+                    "folders": [
+                      {
+                        "original": "in-training",
+                        "parsed": {
+                          "name": "in-training",
+                          "theme": null,
+                          "hiddenLevel": 0
+                        },
+                        "sub": {
+                          "name": "in-training",
+                          "folders": [],
+                          "files": []
+                        }
+                      },
+                      {
+                        "original": "potential",
+                        "parsed": {
+                          "name": "potential",
+                          "theme": null,
+                          "hiddenLevel": 0
+                        },
+                        "sub": {
+                          "name": "potential",
+                          "folders": [],
+                          "files": []
+                        }
+                      },
+                      {
+                        "original": "rejected",
+                        "parsed": {
+                          "name": "rejected",
+                          "theme": null,
+                          "hiddenLevel": 0
+                        },
+                        "sub": {
+                          "name": "rejected",
+                          "folders": [],
+                          "files": []
+                        }
+                      }
+                    ],
+                    "files": []
+                  }
+                }
+              ],
+              "files": []
+            }
+          },
+          {
+            "original": "operations",
+            "parsed": {
+              "name": "operations",
+              "theme": null,
+              "hiddenLevel": 0
+            },
+            "sub": {
+              "name": "operations",
+              "folders": [
+                {
+                  "original": "active",
+                  "parsed": {
+                    "name": "active",
+                    "theme": null,
+                    "hiddenLevel": 0
+                  },
+                  "sub": {
+                    "name": "active",
+                    "folders": [],
+                    "files": []
+                  }
+                },
+                {
+                  "original": "completed",
+                  "parsed": {
+                    "name": "completed",
+                    "theme": null,
+                    "hiddenLevel": 0
+                  },
+                  "sub": {
+                    "name": "completed",
+                    "folders": [],
+                    "files": []
+                  }
+                },
+                {
+                  "original": "future",
+                  "parsed": {
+                    "name": "future",
+                    "theme": null,
+                    "hiddenLevel": 0
+                  },
+                  "sub": {
+                    "name": "future",
+                    "folders": [],
+                    "files": []
+                  }
+                },
+                {
+                  "original": "failed",
+                  "parsed": {
+                    "name": "failed",
+                    "theme": null,
+                    "hiddenLevel": 0
+                  },
+                  "sub": {
+                    "name": "failed",
+                    "folders": [],
+                    "files": []
+                  }
+                },
+                {
+                  "original": "aborted",
+                  "parsed": {
+                    "name": "aborted",
+                    "theme": null,
+                    "hiddenLevel": 0
+                  },
+                  "sub": {
+                    "name": "aborted",
+                    "folders": [],
+                    "files": []
+                  }
+                },
+                {
+                  "original": "discarded",
+                  "parsed": {
+                    "name": "discarded",
+                    "theme": null,
+                    "hiddenLevel": 0
+                  },
+                  "sub": {
+                    "name": "discarded",
+                    "folders": [],
+                    "files": []
+                  }
+                }
+              ],
+              "files": []
+            }
+          },
+          {
+            "original": "logistics",
+            "parsed": {
+              "name": "logistics",
+              "theme": null,
+              "hiddenLevel": 0
+            },
+            "sub": {
+              "name": "logistics",
+              "folders": [
+                {
+                  "original": "equipment",
+                  "parsed": {
+                    "name": "equipment",
+                    "theme": null,
+                    "hiddenLevel": 0
+                  },
+                  "sub": {
+                    "name": "equipment",
+                    "folders": [],
+                    "files": []
+                  }
+                },
+                {
+                  "original": "resources",
+                  "parsed": {
+                    "name": "resources",
+                    "theme": null,
+                    "hiddenLevel": 0
+                  },
+                  "sub": {
+                    "name": "resources",
+                    "folders": [],
+                    "files": []
+                  }
+                },
+                {
+                  "original": "finance",
+                  "parsed": {
+                    "name": "finance",
+                    "theme": null,
+                    "hiddenLevel": 0
+                  },
+                  "sub": {
+                    "name": "finance",
+                    "folders": [],
+                    "files": []
+                  }
+                },
+                {
+                  "original": "transportation",
+                  "parsed": {
+                    "name": "transportation",
+                    "theme": null,
+                    "hiddenLevel": 0
+                  },
+                  "sub": {
+                    "name": "transportation",
+                    "folders": [],
+                    "files": []
+                  }
+                },
+                {
+                  "original": "research",
+                  "parsed": {
+                    "name": "research",
+                    "theme": null,
+                    "hiddenLevel": 0
+                  },
+                  "sub": {
+                    "name": "research",
+                    "folders": [],
+                    "files": []
+                  }
+                }
+              ],
+              "files": []
+            }
+          },
+          {
+            "original": "administration",
+            "parsed": {
+              "name": "administration",
+              "theme": null,
+              "hiddenLevel": 0
+            },
+            "sub": {
+              "name": "administration",
+              "folders": [
+                {
+                  "original": "policies",
+                  "parsed": {
+                    "name": "policies",
+                    "theme": null,
+                    "hiddenLevel": 0
+                  },
+                  "sub": {
+                    "name": "policies",
+                    "folders": [],
+                    "files": []
+                  }
+                },
+                {
+                  "original": "protocols",
+                  "parsed": {
+                    "name": "protocols",
+                    "theme": null,
+                    "hiddenLevel": 0
+                  },
+                  "sub": {
+                    "name": "protocols",
+                    "folders": [],
+                    "files": []
+                  }
+                },
+                {
+                  "original": "legal",
+                  "parsed": {
+                    "name": "legal",
+                    "theme": null,
+                    "hiddenLevel": 0
+                  },
+                  "sub": {
+                    "name": "legal",
+                    "folders": [],
+                    "files": []
+                  }
+                },
+                {
+                  "original": "investigations:hidden1",
+                  "parsed": {
+                    "name": "investigations",
+                    "theme": null,
+                    "hiddenLevel": 1
+                  },
+                  "sub": {
+                    "name": "investigations",
+                    "folders": [],
+                    "files": []
+                  }
+                }
+              ],
+              "files": []
+            }
+          },
+          {
+            "original": "technology",
+            "parsed": {
+              "name": "technology",
+              "theme": null,
+              "hiddenLevel": 0
+            },
+            "sub": {
+              "name": "technology",
+              "folders": [
+                {
+                  "original": "weapons",
+                  "parsed": {
+                    "name": "weapons",
+                    "theme": null,
+                    "hiddenLevel": 0
+                  },
+                  "sub": {
+                    "name": "weapons",
+                    "folders": [
+                      {
+                        "original": "non-lethal",
+                        "parsed": {
+                          "name": "non-lethal",
+                          "theme": null,
+                          "hiddenLevel": 0
+                        },
+                        "sub": {
+                          "name": "non-lethal",
+                          "folders": [],
+                          "files": []
+                        }
+                      },
+                      {
+                        "original": "lethal",
+                        "parsed": {
+                          "name": "lethal",
+                          "theme": null,
+                          "hiddenLevel": 0
+                        },
+                        "sub": {
+                          "name": "lethal",
+                          "folders": [],
+                          "files": []
+                        }
+                      },
+                      {
+                        "original": "extreme",
+                        "parsed": {
+                          "name": "extreme",
+                          "theme": null,
+                          "hiddenLevel": 0
+                        },
+                        "sub": {
+                          "name": "extreme",
+                          "folders": [],
+                          "files": []
+                        }
+                      }
+                    ],
+                    "files": []
+                  }
+                },
+                {
+                  "original": "vehicles",
+                  "parsed": {
+                    "name": "vehicles",
+                    "theme": null,
+                    "hiddenLevel": 0
+                  },
+                  "sub": {
+                    "name": "vehicles",
+                    "folders": [
+                      {
+                        "original": "air",
+                        "parsed": {
+                          "name": "air",
+                          "theme": null,
+                          "hiddenLevel": 0
+                        },
+                        "sub": {
+                          "name": "air",
+                          "folders": [
+                            {
+                              "original": "small",
+                              "parsed": {
+                                "name": "small",
+                                "theme": null,
+                                "hiddenLevel": 0
+                              },
+                              "sub": {
+                                "name": "small",
+                                "folders": [],
+                                "files": []
+                              }
+                            },
+                            {
+                              "original": "medium",
+                              "parsed": {
+                                "name": "medium",
+                                "theme": null,
+                                "hiddenLevel": 0
+                              },
+                              "sub": {
+                                "name": "medium",
+                                "folders": [],
+                                "files": []
+                              }
+                            },
+                            {
+                              "original": "large",
+                              "parsed": {
+                                "name": "large",
+                                "theme": null,
+                                "hiddenLevel": 0
+                              },
+                              "sub": {
+                                "name": "large",
+                                "folders": [],
+                                "files": []
+                              }
+                            },
+                            {
+                              "original": "behemoth",
+                              "parsed": {
+                                "name": "behemoth",
+                                "theme": null,
+                                "hiddenLevel": 0
+                              },
+                              "sub": {
+                                "name": "behemoth",
+                                "folders": [],
+                                "files": []
+                              }
+                            }
+                          ],
+                          "files": []
+                        }
+                      },
+                      {
+                        "original": "land",
+                        "parsed": {
+                          "name": "land",
+                          "theme": null,
+                          "hiddenLevel": 0
+                        },
+                        "sub": {
+                          "name": "land",
+                          "folders": [
+                            {
+                              "original": "small",
+                              "parsed": {
+                                "name": "small",
+                                "theme": null,
+                                "hiddenLevel": 0
+                              },
+                              "sub": {
+                                "name": "small",
+                                "folders": [],
+                                "files": []
+                              }
+                            },
+                            {
+                              "original": "medium",
+                              "parsed": {
+                                "name": "medium",
+                                "theme": null,
+                                "hiddenLevel": 0
+                              },
+                              "sub": {
+                                "name": "medium",
+                                "folders": [],
+                                "files": []
+                              }
+                            },
+                            {
+                              "original": "large",
+                              "parsed": {
+                                "name": "large",
+                                "theme": null,
+                                "hiddenLevel": 0
+                              },
+                              "sub": {
+                                "name": "large",
+                                "folders": [],
+                                "files": []
+                              }
+                            },
+                            {
+                              "original": "behemoth",
+                              "parsed": {
+                                "name": "behemoth",
+                                "theme": null,
+                                "hiddenLevel": 0
+                              },
+                              "sub": {
+                                "name": "behemoth",
+                                "folders": [],
+                                "files": []
+                              }
+                            }
+                          ],
+                          "files": []
+                        }
+                      },
+                      {
+                        "original": "sea",
+                        "parsed": {
+                          "name": "sea",
+                          "theme": null,
+                          "hiddenLevel": 0
+                        },
+                        "sub": {
+                          "name": "sea",
+                          "folders": [
+                            {
+                              "original": "surface",
+                              "parsed": {
+                                "name": "surface",
+                                "theme": null,
+                                "hiddenLevel": 0
+                              },
+                              "sub": {
+                                "name": "surface",
+                                "folders": [
+                                  {
+                                    "original": "small",
+                                    "parsed": {
+                                      "name": "small",
+                                      "theme": null,
+                                      "hiddenLevel": 0
+                                    },
+                                    "sub": {
+                                      "name": "small",
+                                      "folders": [],
+                                      "files": []
+                                    }
+                                  },
+                                  {
+                                    "original": "medium",
+                                    "parsed": {
+                                      "name": "medium",
+                                      "theme": null,
+                                      "hiddenLevel": 0
+                                    },
+                                    "sub": {
+                                      "name": "medium",
+                                      "folders": [],
+                                      "files": []
+                                    }
+                                  },
+                                  {
+                                    "original": "large",
+                                    "parsed": {
+                                      "name": "large",
+                                      "theme": null,
+                                      "hiddenLevel": 0
+                                    },
+                                    "sub": {
+                                      "name": "large",
+                                      "folders": [],
+                                      "files": []
+                                    }
+                                  },
+                                  {
+                                    "original": "behemoth",
+                                    "parsed": {
+                                      "name": "behemoth",
+                                      "theme": null,
+                                      "hiddenLevel": 0
+                                    },
+                                    "sub": {
+                                      "name": "behemoth",
+                                      "folders": [],
+                                      "files": []
+                                    }
+                                  }
+                                ],
+                                "files": []
+                              }
+                            },
+                            {
+                              "original": "submersible",
+                              "parsed": {
+                                "name": "submersible",
+                                "theme": null,
+                                "hiddenLevel": 0
+                              },
+                              "sub": {
+                                "name": "submersible",
+                                "folders": [
+                                  {
+                                    "original": "small",
+                                    "parsed": {
+                                      "name": "small",
+                                      "theme": null,
+                                      "hiddenLevel": 0
+                                    },
+                                    "sub": {
+                                      "name": "small",
+                                      "folders": [],
+                                      "files": []
+                                    }
+                                  },
+                                  {
+                                    "original": "medium",
+                                    "parsed": {
+                                      "name": "medium",
+                                      "theme": null,
+                                      "hiddenLevel": 0
+                                    },
+                                    "sub": {
+                                      "name": "medium",
+                                      "folders": [],
+                                      "files": []
+                                    }
+                                  },
+                                  {
+                                    "original": "large",
+                                    "parsed": {
+                                      "name": "large",
+                                      "theme": null,
+                                      "hiddenLevel": 0
+                                    },
+                                    "sub": {
+                                      "name": "large",
+                                      "folders": [],
+                                      "files": []
+                                    }
+                                  },
+                                  {
+                                    "original": "behemoth",
+                                    "parsed": {
+                                      "name": "behemoth",
+                                      "theme": null,
+                                      "hiddenLevel": 0
+                                    },
+                                    "sub": {
+                                      "name": "behemoth",
+                                      "folders": [],
+                                      "files": []
+                                    }
+                                  }
+                                ],
+                                "files": []
+                              }
+                            }
+                          ],
+                          "files": []
+                        }
+                      },
+                      {
+                        "original": "space",
+                        "parsed": {
+                          "name": "space",
+                          "theme": null,
+                          "hiddenLevel": 0
+                        },
+                        "sub": {
+                          "name": "space",
+                          "folders": [
+                            {
+                              "original": "small",
+                              "parsed": {
+                                "name": "small",
+                                "theme": null,
+                                "hiddenLevel": 0
+                              },
+                              "sub": {
+                                "name": "small",
+                                "folders": [],
+                                "files": []
+                              }
+                            },
+                            {
+                              "original": "medium",
+                              "parsed": {
+                                "name": "medium",
+                                "theme": null,
+                                "hiddenLevel": 0
+                              },
+                              "sub": {
+                                "name": "medium",
+                                "folders": [],
+                                "files": []
+                              }
+                            },
+                            {
+                              "original": "large",
+                              "parsed": {
+                                "name": "large",
+                                "theme": null,
+                                "hiddenLevel": 0
+                              },
+                              "sub": {
+                                "name": "large",
+                                "folders": [],
+                                "files": []
+                              }
+                            },
+                            {
+                              "original": "behemoth",
+                              "parsed": {
+                                "name": "behemoth",
+                                "theme": null,
+                                "hiddenLevel": 0
+                              },
+                              "sub": {
+                                "name": "behemoth",
+                                "folders": [],
+                                "files": []
+                              }
+                            },
+                            {
+                              "original": "beyonder",
+                              "parsed": {
+                                "name": "beyonder",
+                                "theme": null,
+                                "hiddenLevel": 0
+                              },
+                              "sub": {
+                                "name": "beyonder",
+                                "folders": [],
+                                "files": []
+                              }
+                            }
+                          ],
+                          "files": []
+                        }
+                      },
+                      {
+                        "original": "other",
+                        "parsed": {
+                          "name": "other",
+                          "theme": null,
+                          "hiddenLevel": 0
+                        },
+                        "sub": {
+                          "name": "other",
+                          "folders": [],
+                          "files": []
+                        }
+                      }
+                    ],
+                    "files": []
+                  }
+                },
+                {
+                  "original": "support",
+                  "parsed": {
+                    "name": "support",
+                    "theme": null,
+                    "hiddenLevel": 0
+                  },
+                  "sub": {
+                    "name": "support",
+                    "folders": [],
+                    "files": []
+                  }
+                },
+                {
+                  "original": "infrastructure",
+                  "parsed": {
+                    "name": "infrastructure",
+                    "theme": null,
+                    "hiddenLevel": 0
+                  },
+                  "sub": {
+                    "name": "infrastructure",
+                    "folders": [],
+                    "files": []
+                  }
+                },
+                {
+                  "original": "autonomous",
+                  "parsed": {
+                    "name": "autonomous",
+                    "theme": null,
+                    "hiddenLevel": 0
+                  },
+                  "sub": {
+                    "name": "autonomous",
+                    "folders": [],
+                    "files": []
+                  }
+                },
+                {
+                  "original": "prototypes",
+                  "parsed": {
+                    "name": "prototypes",
+                    "theme": null,
+                    "hiddenLevel": 0
+                  },
+                  "sub": {
+                    "name": "prototypes",
+                    "folders": [],
+                    "files": [
+                      {
+                        "original": "pixie.mp3:hidden4",
+                        "parsed": {
+                          "name": "pixie.mp3",
+                          "hiddenLevel": 4,
+                          "lockedLevel": 0
+                        }
+                      }
+                    ]
+                  }
+                }
+              ],
+              "files": []
+            }
+          }
+        ],
+        "files": []
+      }
+    },
+    {
+      "original": "people",
+      "parsed": {
+        "name": "people",
+        "theme": null,
+        "hiddenLevel": 0
+      },
+      "sub": {
+        "name": "people",
+        "folders": [
+          {
+            "original": "heroes",
+            "parsed": {
+              "name": "heroes",
+              "theme": null,
+              "hiddenLevel": 0
+            },
+            "sub": {
+              "name": "heroes",
+              "folders": [
+                {
+                  "original": "active",
+                  "parsed": {
+                    "name": "active",
+                    "theme": null,
+                    "hiddenLevel": 0
+                  },
+                  "sub": {
+                    "name": "active",
+                    "folders": [],
+                    "files": []
+                  }
+                },
+                {
+                  "original": "inactive",
+                  "parsed": {
+                    "name": "inactive",
+                    "theme": null,
+                    "hiddenLevel": 0
+                  },
+                  "sub": {
+                    "name": "inactive",
+                    "folders": [],
+                    "files": []
+                  }
+                },
+                {
+                  "original": "deceased",
+                  "parsed": {
+                    "name": "deceased",
+                    "theme": null,
+                    "hiddenLevel": 0
+                  },
+                  "sub": {
+                    "name": "deceased",
+                    "folders": [],
+                    "files": []
+                  }
+                },
+                {
+                  "original": "missing",
+                  "parsed": {
+                    "name": "missing",
+                    "theme": null,
+                    "hiddenLevel": 0
+                  },
+                  "sub": {
+                    "name": "missing",
+                    "folders": [],
+                    "files": []
+                  }
+                },
+                {
+                  "original": "defected",
+                  "parsed": {
+                    "name": "defected",
+                    "theme": null,
+                    "hiddenLevel": 0
+                  },
+                  "sub": {
+                    "name": "defected",
+                    "folders": [],
+                    "files": []
+                  }
+                },
+                {
+                  "original": "unknown",
+                  "parsed": {
+                    "name": "unknown",
+                    "theme": null,
+                    "hiddenLevel": 0
+                  },
+                  "sub": {
+                    "name": "unknown",
+                    "folders": [],
+                    "files": []
+                  }
+                }
+              ],
+              "files": []
+            }
+          },
+          {
+            "original": "villains",
+            "parsed": {
+              "name": "villains",
+              "theme": null,
+              "hiddenLevel": 0
+            },
+            "sub": {
+              "name": "villains",
+              "folders": [
+                {
+                  "original": "active",
+                  "parsed": {
+                    "name": "active",
+                    "theme": null,
+                    "hiddenLevel": 0
+                  },
+                  "sub": {
+                    "name": "active",
+                    "folders": [],
+                    "files": []
+                  }
+                },
+                {
+                  "original": "inactive",
+                  "parsed": {
+                    "name": "inactive",
+                    "theme": null,
+                    "hiddenLevel": 0
+                  },
+                  "sub": {
+                    "name": "inactive",
+                    "folders": [],
+                    "files": []
+                  }
+                },
+                {
+                  "original": "captured",
+                  "parsed": {
+                    "name": "captured",
+                    "theme": null,
+                    "hiddenLevel": 0
+                  },
+                  "sub": {
+                    "name": "captured",
+                    "folders": [],
+                    "files": []
+                  }
+                },
+                {
+                  "original": "deceased",
+                  "parsed": {
+                    "name": "deceased",
+                    "theme": null,
+                    "hiddenLevel": 0
+                  },
+                  "sub": {
+                    "name": "deceased",
+                    "folders": [],
+                    "files": [
+                      {
+                        "original": "pixie.png:hidden3",
+                        "parsed": {
+                          "name": "pixie.png",
+                          "hiddenLevel": 3,
+                          "lockedLevel": 0
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "original": "unknown",
+                  "parsed": {
+                    "name": "unknown",
+                    "theme": null,
+                    "hiddenLevel": 0
+                  },
+                  "sub": {
+                    "name": "unknown",
+                    "folders": [],
+                    "files": []
+                  }
+                }
+              ],
+              "files": []
+            }
+          },
+          {
+            "original": "neutral",
+            "parsed": {
+              "name": "neutral",
+              "theme": null,
+              "hiddenLevel": 0
+            },
+            "sub": {
+              "name": "neutral",
+              "folders": [
+                {
+                  "original": "active",
+                  "parsed": {
+                    "name": "active",
+                    "theme": null,
+                    "hiddenLevel": 0
+                  },
+                  "sub": {
+                    "name": "active",
+                    "folders": [],
+                    "files": []
+                  }
+                },
+                {
+                  "original": "inactive",
+                  "parsed": {
+                    "name": "inactive",
+                    "theme": null,
+                    "hiddenLevel": 0
+                  },
+                  "sub": {
+                    "name": "inactive",
+                    "folders": [],
+                    "files": []
+                  }
+                },
+                {
+                  "original": "deceased",
+                  "parsed": {
+                    "name": "deceased",
+                    "theme": null,
+                    "hiddenLevel": 0
+                  },
+                  "sub": {
+                    "name": "deceased",
+                    "folders": [],
+                    "files": []
+                  }
+                },
+                {
+                  "original": "unknown",
+                  "parsed": {
+                    "name": "unknown",
+                    "theme": null,
+                    "hiddenLevel": 0
+                  },
+                  "sub": {
+                    "name": "unknown",
+                    "folders": [],
+                    "files": []
+                  }
+                }
+              ],
+              "files": []
+            }
+          },
+          {
+            "original": "other",
+            "parsed": {
+              "name": "other",
+              "theme": null,
+              "hiddenLevel": 0
+            },
+            "sub": {
+              "name": "other",
+              "folders": [
+                {
+                  "original": "regular",
+                  "parsed": {
+                    "name": "regular",
+                    "theme": null,
+                    "hiddenLevel": 0
+                  },
+                  "sub": {
+                    "name": "regular",
+                    "folders": [],
+                    "files": []
+                  }
+                },
+                {
+                  "original": "special",
+                  "parsed": {
+                    "name": "special",
+                    "theme": null,
+                    "hiddenLevel": 0
+                  },
+                  "sub": {
+                    "name": "special",
+                    "folders": [],
+                    "files": []
+                  }
+                },
+                {
+                  "original": "influencial",
+                  "parsed": {
+                    "name": "influencial",
+                    "theme": null,
+                    "hiddenLevel": 0
+                  },
+                  "sub": {
+                    "name": "influencial",
+                    "folders": [],
+                    "files": []
+                  }
+                },
+                {
+                  "original": "criminal",
+                  "parsed": {
+                    "name": "criminal",
+                    "theme": null,
+                    "hiddenLevel": 0
+                  },
+                  "sub": {
+                    "name": "criminal",
+                    "folders": [],
+                    "files": []
+                  }
+                }
+              ],
+              "files": []
+            }
+          }
+        ],
+        "files": []
+      }
+    },
+    {
+      "original": "organizations",
+      "parsed": {
+        "name": "organizations",
+        "theme": null,
+        "hiddenLevel": 0
+      },
+      "sub": {
+        "name": "organizations",
+        "folders": [
+          {
+            "original": "allied",
+            "parsed": {
+              "name": "allied",
+              "theme": null,
+              "hiddenLevel": 0
+            },
+            "sub": {
               "name": "allied",
               "folders": [],
               "files": []
+            }
+          },
+          {
+            "original": "rival",
+            "parsed": {
+              "name": "rival",
+              "theme": null,
+              "hiddenLevel": 0
             },
-            {
-              "name": "hostile",
-              "folders": [],
-              "files": []
-            },
-            {
-              "name": "neutral",
-              "folders": [],
-              "files": []
-            },
-            {
+            "sub": {
               "name": "rival",
               "folders": [],
               "files": []
+            }
+          },
+          {
+            "original": "hostile",
+            "parsed": {
+              "name": "hostile",
+              "theme": null,
+              "hiddenLevel": 0
             },
-            {
-              "name": "uncontrolled",
+            "sub": {
+              "name": "hostile",
               "folders": [],
               "files": []
             }
-          ],
-          "files": []
-        }
-      ],
-      "files": []
+          },
+          {
+            "original": "neutral",
+            "parsed": {
+              "name": "neutral",
+              "theme": null,
+              "hiddenLevel": 0
+            },
+            "sub": {
+              "name": "neutral",
+              "folders": [],
+              "files": []
+            }
+          },
+          {
+            "original": "defunct",
+            "parsed": {
+              "name": "defunct",
+              "theme": null,
+              "hiddenLevel": 0
+            },
+            "sub": {
+              "name": "defunct",
+              "folders": [],
+              "files": []
+            }
+          }
+        ],
+        "files": []
+      }
     },
     {
-      "name": "organizations",
-      "folders": [
-        {
-          "name": "allied",
-          "folders": [],
-          "files": []
-        },
-        {
-          "name": "defunct",
-          "folders": [],
-          "files": []
-        },
-        {
-          "name": "hostile",
-          "folders": [],
-          "files": []
-        },
-        {
-          "name": "neutral",
-          "folders": [],
-          "files": []
-        },
-        {
-          "name": "rival",
-          "folders": [],
-          "files": []
-        }
-      ],
-      "files": []
+      "original": "locations",
+      "parsed": {
+        "name": "locations",
+        "theme": null,
+        "hiddenLevel": 0
+      },
+      "sub": {
+        "name": "locations",
+        "folders": [
+          {
+            "original": "strategic",
+            "parsed": {
+              "name": "strategic",
+              "theme": null,
+              "hiddenLevel": 0
+            },
+            "sub": {
+              "name": "strategic",
+              "folders": [
+                {
+                  "original": "allied",
+                  "parsed": {
+                    "name": "allied",
+                    "theme": null,
+                    "hiddenLevel": 0
+                  },
+                  "sub": {
+                    "name": "allied",
+                    "folders": [],
+                    "files": []
+                  }
+                },
+                {
+                  "original": "rival",
+                  "parsed": {
+                    "name": "rival",
+                    "theme": null,
+                    "hiddenLevel": 0
+                  },
+                  "sub": {
+                    "name": "rival",
+                    "folders": [],
+                    "files": []
+                  }
+                },
+                {
+                  "original": "hostile",
+                  "parsed": {
+                    "name": "hostile",
+                    "theme": null,
+                    "hiddenLevel": 0
+                  },
+                  "sub": {
+                    "name": "hostile",
+                    "folders": [],
+                    "files": []
+                  }
+                },
+                {
+                  "original": "neutral",
+                  "parsed": {
+                    "name": "neutral",
+                    "theme": null,
+                    "hiddenLevel": 0
+                  },
+                  "sub": {
+                    "name": "neutral",
+                    "folders": [],
+                    "files": []
+                  }
+                },
+                {
+                  "original": "uncontrolled",
+                  "parsed": {
+                    "name": "uncontrolled",
+                    "theme": null,
+                    "hiddenLevel": 0
+                  },
+                  "sub": {
+                    "name": "uncontrolled",
+                    "folders": [],
+                    "files": []
+                  }
+                }
+              ],
+              "files": []
+            }
+          },
+          {
+            "original": "anomalous",
+            "parsed": {
+              "name": "anomalous",
+              "theme": null,
+              "hiddenLevel": 0
+            },
+            "sub": {
+              "name": "anomalous",
+              "folders": [],
+              "files": []
+            }
+          },
+          {
+            "original": "alien",
+            "parsed": {
+              "name": "alien",
+              "theme": null,
+              "hiddenLevel": 0
+            },
+            "sub": {
+              "name": "alien",
+              "folders": [
+                {
+                  "original": "planets",
+                  "parsed": {
+                    "name": "planets",
+                    "theme": null,
+                    "hiddenLevel": 0
+                  },
+                  "sub": {
+                    "name": "planets",
+                    "folders": [],
+                    "files": []
+                  }
+                },
+                {
+                  "original": "moons",
+                  "parsed": {
+                    "name": "moons",
+                    "theme": null,
+                    "hiddenLevel": 0
+                  },
+                  "sub": {
+                    "name": "moons",
+                    "folders": [],
+                    "files": []
+                  }
+                },
+                {
+                  "original": "systems",
+                  "parsed": {
+                    "name": "systems",
+                    "theme": null,
+                    "hiddenLevel": 0
+                  },
+                  "sub": {
+                    "name": "systems",
+                    "folders": [],
+                    "files": []
+                  }
+                },
+                {
+                  "original": "structures",
+                  "parsed": {
+                    "name": "structures",
+                    "theme": null,
+                    "hiddenLevel": 0
+                  },
+                  "sub": {
+                    "name": "structures",
+                    "folders": [],
+                    "files": []
+                  }
+                },
+                {
+                  "original": "other",
+                  "parsed": {
+                    "name": "other",
+                    "theme": null,
+                    "hiddenLevel": 0
+                  },
+                  "sub": {
+                    "name": "other",
+                    "folders": [],
+                    "files": []
+                  }
+                }
+              ],
+              "files": []
+            }
+          },
+          {
+            "original": "other",
+            "parsed": {
+              "name": "other",
+              "theme": null,
+              "hiddenLevel": 0
+            },
+            "sub": {
+              "name": "other",
+              "folders": [],
+              "files": []
+            }
+          }
+        ],
+        "files": []
+      }
     },
     {
-      "name": "people",
-      "folders": [
-        {
-          "name": "heroes",
-          "folders": [
-            {
-              "name": "active",
-              "folders": [],
-              "files": []
+      "original": "lifeforms",
+      "parsed": {
+        "name": "lifeforms",
+        "theme": null,
+        "hiddenLevel": 0
+      },
+      "sub": {
+        "name": "lifeforms",
+        "folders": [
+          {
+            "original": "people",
+            "parsed": {
+              "name": "people",
+              "theme": null,
+              "hiddenLevel": 0
             },
-            {
-              "name": "deceased",
-              "folders": [],
-              "files": []
-            },
-            {
-              "name": "defected",
-              "folders": [],
-              "files": []
-            },
-            {
-              "name": "inactive",
-              "folders": [],
-              "files": []
-            },
-            {
-              "name": "missing",
-              "folders": [],
-              "files": []
-            },
-            {
-              "name": "unknown",
+            "sub": {
+              "name": "people",
               "folders": [],
               "files": []
             }
-          ],
-          "files": []
-        },
-        {
-          "name": "neutral",
-          "folders": [
-            {
-              "name": "active",
-              "folders": [],
-              "files": []
+          },
+          {
+            "original": "animals",
+            "parsed": {
+              "name": "animals",
+              "theme": null,
+              "hiddenLevel": 0
             },
-            {
-              "name": "deceased",
-              "folders": [],
-              "files": []
-            },
-            {
-              "name": "inactive",
-              "folders": [],
-              "files": []
-            },
-            {
-              "name": "unknown",
+            "sub": {
+              "name": "animals",
               "folders": [],
               "files": []
             }
-          ],
-          "files": []
-        },
-        {
-          "name": "other",
-          "folders": [
-            {
-              "name": "criminal",
-              "folders": [],
-              "files": []
+          },
+          {
+            "original": "plants",
+            "parsed": {
+              "name": "plants",
+              "theme": null,
+              "hiddenLevel": 0
             },
-            {
-              "name": "influencial",
-              "folders": [],
-              "files": []
-            },
-            {
-              "name": "regular",
-              "folders": [],
-              "files": []
-            },
-            {
-              "name": "special",
+            "sub": {
+              "name": "plants",
               "folders": [],
               "files": []
             }
-          ],
-          "files": []
-        },
-        {
-          "name": "villains",
-          "folders": [
-            {
-              "name": "active",
+          },
+          {
+            "original": "other",
+            "parsed": {
+              "name": "other",
+              "theme": null,
+              "hiddenLevel": 0
+            },
+            "sub": {
+              "name": "other",
               "folders": [],
               "files": []
+            }
+          }
+        ],
+        "files": []
+      }
+    },
+    {
+      "original": "technology",
+      "parsed": {
+        "name": "technology",
+        "theme": null,
+        "hiddenLevel": 0
+      },
+      "sub": {
+        "name": "technology",
+        "folders": [
+          {
+            "original": "hero",
+            "parsed": {
+              "name": "hero",
+              "theme": null,
+              "hiddenLevel": 0
             },
-            {
-              "name": "captured",
+            "sub": {
+              "name": "hero",
               "folders": [],
               "files": []
+            }
+          },
+          {
+            "original": "allied",
+            "parsed": {
+              "name": "allied",
+              "theme": null,
+              "hiddenLevel": 0
             },
-            {
-              "name": "deceased",
+            "sub": {
+              "name": "allied",
+              "folders": [],
+              "files": []
+            }
+          },
+          {
+            "original": "villain",
+            "parsed": {
+              "name": "villain",
+              "theme": null,
+              "hiddenLevel": 0
+            },
+            "sub": {
+              "name": "villain",
+              "folders": [],
+              "files": []
+            }
+          },
+          {
+            "original": "hostile",
+            "parsed": {
+              "name": "hostile",
+              "theme": null,
+              "hiddenLevel": 0
+            },
+            "sub": {
+              "name": "hostile",
+              "folders": [],
+              "files": []
+            }
+          },
+          {
+            "original": "underground",
+            "parsed": {
+              "name": "underground",
+              "theme": null,
+              "hiddenLevel": 0
+            },
+            "sub": {
+              "name": "underground",
+              "folders": [],
+              "files": []
+            }
+          },
+          {
+            "original": "alien",
+            "parsed": {
+              "name": "alien",
+              "theme": null,
+              "hiddenLevel": 0
+            },
+            "sub": {
+              "name": "alien",
+              "folders": [],
+              "files": []
+            }
+          },
+          {
+            "original": "anomalous",
+            "parsed": {
+              "name": "anomalous",
+              "theme": null,
+              "hiddenLevel": 0
+            },
+            "sub": {
+              "name": "anomalous",
               "folders": [],
               "files": [
-                "pixie.png:hidden3"
+                {
+                  "original": "pixie.mp3:hidden5",
+                  "parsed": {
+                    "name": "pixie.mp3",
+                    "hiddenLevel": 5,
+                    "lockedLevel": 0
+                  }
+                }
               ]
+            }
+          },
+          {
+            "original": "other",
+            "parsed": {
+              "name": "other",
+              "theme": null,
+              "hiddenLevel": 0
             },
-            {
-              "name": "inactive",
-              "folders": [],
-              "files": []
-            },
-            {
-              "name": "unknown",
+            "sub": {
+              "name": "other",
               "folders": [],
               "files": []
             }
-          ],
-          "files": []
-        }
-      ],
-      "files": []
+          }
+        ],
+        "files": []
+      }
     },
     {
-      "name": "secret",
-      "folders": [
-        {
-          "name": "class-1",
-          "folders": [],
-          "files": []
-        },
-        {
-          "name": "class-2",
-          "folders": [],
-          "files": []
-        },
-        {
-          "name": "class-3",
-          "folders": [],
-          "files": []
-        },
-        {
-          "name": "class-4",
-          "folders": [],
-          "files": []
-        },
-        {
-          "name": "class-5",
-          "folders": [],
-          "files": [
-            "awww.1.txt:hidden5,locked5",
-            "awww.jpg:hidden5,locked5",
-            "awww.mp3:hidden5,locked5",
-            "awww.txt:hidden5,locked5"
-          ]
-        }
-      ],
-      "files": []
-    },
-    {
-      "name": "technology",
-      "folders": [
-        {
-          "name": "alien",
-          "folders": [],
-          "files": []
-        },
-        {
-          "name": "allied",
-          "folders": [],
-          "files": []
-        },
-        {
-          "name": "anomalous",
-          "folders": [],
-          "files": [
-            "pixie.mp3:hidden5"
-          ]
-        },
-        {
-          "name": "hero",
-          "folders": [],
-          "files": []
-        },
-        {
-          "name": "hostile",
-          "folders": [],
-          "files": []
-        },
-        {
-          "name": "other",
-          "folders": [],
-          "files": []
-        },
-        {
-          "name": "underground",
-          "folders": [],
-          "files": []
-        },
-        {
-          "name": "villain",
-          "folders": [],
-          "files": []
-        }
-      ],
-      "files": []
-    },
-    {
-      "name": "vanguard",
-      "folders": [
-        {
-          "name": "administration",
-          "folders": [
-            {
-              "name": "investigations",
-              "folders": [],
-              "files": []
+      "original": "events",
+      "parsed": {
+        "name": "events",
+        "theme": null,
+        "hiddenLevel": 0
+      },
+      "sub": {
+        "name": "events",
+        "folders": [
+          {
+            "original": "historical",
+            "parsed": {
+              "name": "historical",
+              "theme": null,
+              "hiddenLevel": 0
             },
-            {
-              "name": "legal",
-              "folders": [],
-              "files": []
-            },
-            {
-              "name": "policies",
-              "folders": [],
-              "files": []
-            },
-            {
-              "name": "protocols",
-              "folders": [],
-              "files": []
-            }
-          ],
-          "files": []
-        },
-        {
-          "name": "logistics",
-          "folders": [
-            {
-              "name": "equipment",
-              "folders": [],
-              "files": []
-            },
-            {
-              "name": "finance",
-              "folders": [],
-              "files": []
-            },
-            {
-              "name": "research",
-              "folders": [],
-              "files": []
-            },
-            {
-              "name": "resources",
-              "folders": [],
-              "files": []
-            },
-            {
-              "name": "transportation",
-              "folders": [],
-              "files": []
-            }
-          ],
-          "files": []
-        },
-        {
-          "name": "operations",
-          "folders": [
-            {
-              "name": "aborted",
-              "folders": [],
-              "files": []
-            },
-            {
-              "name": "active",
-              "folders": [],
-              "files": []
-            },
-            {
-              "name": "completed",
-              "folders": [],
-              "files": []
-            },
-            {
-              "name": "discarded",
-              "folders": [],
-              "files": []
-            },
-            {
-              "name": "failed",
-              "folders": [],
-              "files": []
-            },
-            {
-              "name": "future",
-              "folders": [],
-              "files": []
-            }
-          ],
-          "files": []
-        },
-        {
-          "name": "personnel",
-          "folders": [
-            {
-              "name": "active",
-              "folders": [
-                {
-                  "name": "level1",
-                  "folders": [],
-                  "files": []
-                },
-                {
-                  "name": "level10",
-                  "folders": [],
-                  "files": []
-                },
-                {
-                  "name": "level11",
-                  "folders": [],
-                  "files": []
-                },
-                {
-                  "name": "level12",
-                  "folders": [],
-                  "files": [
-                    "12-1-truth.txt:hidden4,locked5",
-                    "12-1.md:hidden4,locked4",
-                    "12-1.txt:hidden4,locked4",
-                    "12-2-truth.txt:hidden4,locked5",
-                    "12-2.md:hidden4,locked4",
-                    "12-2.txt:hidden4,locked4",
-                    "12-3-truth.txt:hidden4,locked5",
-                    "12-3.md:hidden4,locked4",
-                    "12-3.txt:hidden4,locked4",
-                    "12-4-truth.txt:hidden4,locked5",
-                    "12-4.md:hidden4,locked4",
-                    "12-4.txt:hidden4,locked4",
-                    "12-5-truth.txt:hidden4,locked5",
-                    "12-5.md:hidden4,locked4",
-                    "12-5.txt:hidden4,locked4",
-                    "12-6-truth.txt:hidden4,locked5",
-                    "12-6.md:hidden4,locked4",
-                    "12-6.txt:hidden4,locked4",
-                    "12-7-truth.txt:hidden4,locked5",
-                    "12-7.md:hidden4,locked4",
-                    "12-7.txt:hidden4,locked4",
-                    "12-8-truth.txt:hidden4,locked5",
-                    "12-8.md:hidden4,locked4",
-                    "12-8.txt:hidden4,locked4",
-                    "12-9-truth.txt:hidden4,locked5",
-                    "12-9.md:hidden4,locked4",
-                    "12-9.txt:hidden4,locked4",
-                    "19-07-1880.txt:hidden4,locked4",
-                    "council-history.txt:hidden4,locked4",
-                    "council.txt:hidden4,locked3"
-                  ]
-                },
-                {
-                  "name": "level13",
-                  "folders": [],
-                  "files": [
-                    "01-01-1854.txt:hidden5,locked5",
-                    "15-04-1872.txt:hidden5,locked5",
-                    "870442-dir.txt:hidden5,locked5",
-                    "the-director.md:hidden5,locked5",
-                    "the-director.txt:hidden5,locked5"
-                  ]
-                },
-                {
-                  "name": "level2",
-                  "folders": [],
-                  "files": []
-                },
-                {
-                  "name": "level3",
-                  "folders": [],
-                  "files": []
-                },
-                {
-                  "name": "level4",
-                  "folders": [],
-                  "files": []
-                },
-                {
-                  "name": "level5",
-                  "folders": [],
-                  "files": []
-                },
-                {
-                  "name": "level6",
-                  "folders": [],
-                  "files": []
-                },
-                {
-                  "name": "level7",
-                  "folders": [],
-                  "files": []
-                },
-                {
-                  "name": "level8",
-                  "folders": [],
-                  "files": []
-                },
-                {
-                  "name": "level9",
-                  "folders": [],
-                  "files": []
-                }
-              ],
-              "files": []
-            },
-            {
-              "name": "candidates",
-              "folders": [
-                {
-                  "name": "in-training",
-                  "folders": [],
-                  "files": []
-                },
-                {
-                  "name": "potential",
-                  "folders": [],
-                  "files": []
-                },
-                {
-                  "name": "rejected",
-                  "folders": [],
-                  "files": []
-                }
-              ],
-              "files": []
-            },
-            {
-              "name": "former",
-              "folders": [
-                {
-                  "name": "deceased",
-                  "folders": [],
-                  "files": []
-                },
-                {
-                  "name": "defected",
-                  "folders": [],
-                  "files": []
-                },
-                {
-                  "name": "fired",
-                  "folders": [],
-                  "files": []
-                },
-                {
-                  "name": "missing",
-                  "folders": [],
-                  "files": []
-                },
-                {
-                  "name": "other",
-                  "folders": [],
-                  "files": []
-                },
-                {
-                  "name": "retired",
-                  "folders": [],
-                  "files": []
-                }
-              ],
-              "files": []
-            }
-          ],
-          "files": []
-        },
-        {
-          "name": "rulebook",
-          "folders": [],
-          "files": []
-        },
-        {
-          "name": "sites",
-          "folders": [],
-          "files": []
-        },
-        {
-          "name": "technology",
-          "folders": [
-            {
-              "name": "autonomous",
-              "folders": [],
-              "files": []
-            },
-            {
-              "name": "infrastructure",
-              "folders": [],
-              "files": []
-            },
-            {
-              "name": "prototypes",
+            "sub": {
+              "name": "historical",
               "folders": [],
               "files": [
-                "pixie.mp3:hidden4"
+                {
+                  "original": "pixie.txt",
+                  "parsed": {
+                    "name": "pixie.txt",
+                    "hiddenLevel": 0,
+                    "lockedLevel": 0
+                  }
+                }
               ]
+            }
+          },
+          {
+            "original": "training",
+            "parsed": {
+              "name": "training",
+              "theme": null,
+              "hiddenLevel": 0
             },
-            {
-              "name": "support",
+            "sub": {
+              "name": "training",
               "folders": [],
               "files": []
+            }
+          },
+          {
+            "original": "minor-incidents",
+            "parsed": {
+              "name": "minor-incidents",
+              "theme": null,
+              "hiddenLevel": 0
             },
-            {
-              "name": "vehicles",
-              "folders": [
-                {
-                  "name": "air",
-                  "folders": [
-                    {
-                      "name": "behemoth",
-                      "folders": [],
-                      "files": []
-                    },
-                    {
-                      "name": "large",
-                      "folders": [],
-                      "files": []
-                    },
-                    {
-                      "name": "medium",
-                      "folders": [],
-                      "files": []
-                    },
-                    {
-                      "name": "small",
-                      "folders": [],
-                      "files": []
-                    }
-                  ],
-                  "files": []
-                },
-                {
-                  "name": "land",
-                  "folders": [
-                    {
-                      "name": "behemoth",
-                      "folders": [],
-                      "files": []
-                    },
-                    {
-                      "name": "large",
-                      "folders": [],
-                      "files": []
-                    },
-                    {
-                      "name": "medium",
-                      "folders": [],
-                      "files": []
-                    },
-                    {
-                      "name": "small",
-                      "folders": [],
-                      "files": []
-                    }
-                  ],
-                  "files": []
-                },
-                {
-                  "name": "other",
-                  "folders": [],
-                  "files": []
-                },
-                {
-                  "name": "sea",
-                  "folders": [
-                    {
-                      "name": "submersible",
-                      "folders": [
-                        {
-                          "name": "behemoth",
-                          "folders": [],
-                          "files": []
-                        },
-                        {
-                          "name": "large",
-                          "folders": [],
-                          "files": []
-                        },
-                        {
-                          "name": "medium",
-                          "folders": [],
-                          "files": []
-                        },
-                        {
-                          "name": "small",
-                          "folders": [],
-                          "files": []
-                        }
-                      ],
-                      "files": []
-                    },
-                    {
-                      "name": "surface",
-                      "folders": [
-                        {
-                          "name": "behemoth",
-                          "folders": [],
-                          "files": []
-                        },
-                        {
-                          "name": "large",
-                          "folders": [],
-                          "files": []
-                        },
-                        {
-                          "name": "medium",
-                          "folders": [],
-                          "files": []
-                        },
-                        {
-                          "name": "small",
-                          "folders": [],
-                          "files": []
-                        }
-                      ],
-                      "files": []
-                    }
-                  ],
-                  "files": []
-                },
-                {
-                  "name": "space",
-                  "folders": [
-                    {
-                      "name": "behemoth",
-                      "folders": [],
-                      "files": []
-                    },
-                    {
-                      "name": "beyonder",
-                      "folders": [],
-                      "files": []
-                    },
-                    {
-                      "name": "large",
-                      "folders": [],
-                      "files": []
-                    },
-                    {
-                      "name": "medium",
-                      "folders": [],
-                      "files": []
-                    },
-                    {
-                      "name": "small",
-                      "folders": [],
-                      "files": []
-                    }
-                  ],
-                  "files": []
-                }
-              ],
-              "files": []
-            },
-            {
-              "name": "weapons",
-              "folders": [
-                {
-                  "name": "extreme",
-                  "folders": [],
-                  "files": []
-                },
-                {
-                  "name": "lethal",
-                  "folders": [],
-                  "files": []
-                },
-                {
-                  "name": "non-lethal",
-                  "folders": [],
-                  "files": []
-                }
-              ],
+            "sub": {
+              "name": "minor-incidents",
+              "folders": [],
               "files": []
             }
-          ],
-          "files": []
-        }
-      ],
-      "files": []
+          },
+          {
+            "original": "major-incidents",
+            "parsed": {
+              "name": "major-incidents",
+              "theme": null,
+              "hiddenLevel": 0
+            },
+            "sub": {
+              "name": "major-incidents",
+              "folders": [],
+              "files": [
+                {
+                  "original": "pixie.txt:hidden2",
+                  "parsed": {
+                    "name": "pixie.txt",
+                    "hiddenLevel": 2,
+                    "lockedLevel": 0
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "original": "anomalous",
+            "parsed": {
+              "name": "anomalous",
+              "theme": null,
+              "hiddenLevel": 0
+            },
+            "sub": {
+              "name": "anomalous",
+              "folders": [],
+              "files": []
+            }
+          }
+        ],
+        "files": []
+      }
+    },
+    {
+      "original": "index",
+      "parsed": {
+        "name": "index",
+        "theme": null,
+        "hiddenLevel": 0
+      },
+      "sub": {
+        "name": "index",
+        "folders": [
+          {
+            "original": "gifted",
+            "parsed": {
+              "name": "gifted",
+              "theme": null,
+              "hiddenLevel": 0
+            },
+            "sub": {
+              "name": "gifted",
+              "folders": [],
+              "files": []
+            }
+          },
+          {
+            "original": "mutates",
+            "parsed": {
+              "name": "mutates",
+              "theme": null,
+              "hiddenLevel": 0
+            },
+            "sub": {
+              "name": "mutates",
+              "folders": [],
+              "files": []
+            }
+          },
+          {
+            "original": "tech",
+            "parsed": {
+              "name": "tech",
+              "theme": null,
+              "hiddenLevel": 0
+            },
+            "sub": {
+              "name": "tech",
+              "folders": [],
+              "files": []
+            }
+          },
+          {
+            "original": "sorcerers",
+            "parsed": {
+              "name": "sorcerers",
+              "theme": null,
+              "hiddenLevel": 0
+            },
+            "sub": {
+              "name": "sorcerers",
+              "folders": [],
+              "files": []
+            }
+          },
+          {
+            "original": "witches",
+            "parsed": {
+              "name": "witches",
+              "theme": null,
+              "hiddenLevel": 0
+            },
+            "sub": {
+              "name": "witches",
+              "folders": [],
+              "files": [
+                {
+                  "original": "pixie.md:hidden1",
+                  "parsed": {
+                    "name": "pixie.md",
+                    "hiddenLevel": 1,
+                    "lockedLevel": 0
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "original": "summoners",
+            "parsed": {
+              "name": "summoners",
+              "theme": null,
+              "hiddenLevel": 0
+            },
+            "sub": {
+              "name": "summoners",
+              "folders": [],
+              "files": []
+            }
+          },
+          {
+            "original": "wielders",
+            "parsed": {
+              "name": "wielders",
+              "theme": null,
+              "hiddenLevel": 0
+            },
+            "sub": {
+              "name": "wielders",
+              "folders": [],
+              "files": []
+            }
+          },
+          {
+            "original": "vessels",
+            "parsed": {
+              "name": "vessels",
+              "theme": null,
+              "hiddenLevel": 0
+            },
+            "sub": {
+              "name": "vessels",
+              "folders": [],
+              "files": []
+            }
+          },
+          {
+            "original": "alien",
+            "parsed": {
+              "name": "alien",
+              "theme": null,
+              "hiddenLevel": 0
+            },
+            "sub": {
+              "name": "alien",
+              "folders": [],
+              "files": []
+            }
+          },
+          {
+            "original": "conceptuals",
+            "parsed": {
+              "name": "conceptuals",
+              "theme": null,
+              "hiddenLevel": 0
+            },
+            "sub": {
+              "name": "conceptuals",
+              "folders": [],
+              "files": []
+            }
+          },
+          {
+            "original": "other",
+            "parsed": {
+              "name": "other",
+              "theme": null,
+              "hiddenLevel": 0
+            },
+            "sub": {
+              "name": "other",
+              "folders": [],
+              "files": []
+            }
+          }
+        ],
+        "files": []
+      }
+    },
+    {
+      "original": "secret:hidden1",
+      "parsed": {
+        "name": "secret",
+        "theme": null,
+        "hiddenLevel": 1
+      },
+      "sub": {
+        "name": "secret",
+        "folders": [
+          {
+            "original": "class-1:hidden1,purple",
+            "parsed": {
+              "name": "class-1",
+              "theme": "purple",
+              "hiddenLevel": 1
+            },
+            "sub": {
+              "name": "class-1",
+              "folders": [],
+              "files": []
+            }
+          },
+          {
+            "original": "class-2:hidden2,purple",
+            "parsed": {
+              "name": "class-2",
+              "theme": "purple",
+              "hiddenLevel": 2
+            },
+            "sub": {
+              "name": "class-2",
+              "folders": [],
+              "files": []
+            }
+          },
+          {
+            "original": "class-3:hidden4,purple",
+            "parsed": {
+              "name": "class-3",
+              "theme": "purple",
+              "hiddenLevel": 4
+            },
+            "sub": {
+              "name": "class-3",
+              "folders": [],
+              "files": []
+            }
+          },
+          {
+            "original": "class-4:hidden5,purple",
+            "parsed": {
+              "name": "class-4",
+              "theme": "purple",
+              "hiddenLevel": 5
+            },
+            "sub": {
+              "name": "class-4",
+              "folders": [],
+              "files": []
+            }
+          },
+          {
+            "original": "class-5:hidden6,purple",
+            "parsed": {
+              "name": "class-5",
+              "theme": "purple",
+              "hiddenLevel": 6
+            },
+            "sub": {
+              "name": "class-5",
+              "folders": [],
+              "files": []
+            }
+          }
+        ],
+        "files": []
+      }
     }
   ],
   "files": []

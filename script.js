@@ -21,6 +21,7 @@
   // === FAST SEARCH INDEX ===
   let searchableFiles = [];   // flat list of all files (built once)
   let indexBuilt = false;
+  let fullManifest = null;  // the entire db tree from db-manifest.json
 
   const themeColors = { red:true, red2:true, red3:true, orange:true, yellow:true, green:true, cyan:true, blue:true, purple:true, pink:true, white:true };
   let currentTheme = 'green';
@@ -35,7 +36,7 @@
   };
 
   // Blur intensity for locked images (adjustable)
-  const LOCKED_IMAGE_BLUR = 10;
+  const LOCKED_IMAGE_BLUR = 18;
 
   function parseTags(str) {
     const parts = str.split(':').map(p => p.trim()).filter(Boolean);
@@ -173,9 +174,10 @@
 
     // 1. Try the super-fast manifest first (recommended)
     try {
-      const manifest = await fetchJSON('db-manifest.json');
-      if (manifest && manifest.name) {
-        flattenManifest(manifest, '');
+      const manifestData = await fetchJSON('db-manifest.json');
+      if (manifestData && manifestData.name) {
+        fullManifest = manifestData;  // store the full tree
+        flattenManifest(fullManifest, '');
         indexBuilt = true;
         console.log(`✅ Search index ready — ${searchableFiles.length} files (from manifest)`);
         console.timeEnd('Build search index');
@@ -193,25 +195,31 @@
   function flattenManifest(node, currentPath) {
     const base = currentPath ? currentPath + '/' : '';
 
-    // Add files from this folder
+    // Handle both old (string array) and new (object array) formats for files
     if (node.files && Array.isArray(node.files)) {
-      for (const fileName of node.files) {
-        const parsed = parseFile(fileName);
+      node.files.forEach(fileItem => {
+        // New format: {original: "...", parsed: {...}}
+        // Old format: "filename:tag"
+        const fileEntry = (typeof fileItem === 'object' && fileItem.original) ? fileItem.original : fileItem;
+        const parsed = parseFile(fileEntry);
+
         searchableFiles.push({
-          path: /* 'db/' + */ base + parsed.name,
+          path: base + parsed.name,
           name: parsed.name,
           parsed: parsed,
-          baseName: parsed.name.split('.')[0]   // for exact match without extension
+          baseName: parsed.name.split('.')[0]
         });
-      }
+      });
     }
 
-  // Recurse into subfolders
+    // Recurse folders (same handling)
     if (node.folders && Array.isArray(node.folders)) {
-      for (const folderNode of node.folders) {
-        const folderName = folderNode.name || (typeof folderNode === 'string' ? folderNode : '');
-        flattenManifest(folderNode, base + folderName);
-      }
+      node.folders.forEach(folderItem => {
+        const folderEntry = (typeof folderItem === 'object' && folderItem.original) ? folderItem.original : folderItem;
+        const parsedFolder = parseFolder(folderEntry);
+        const folderName = parsedFolder.name;
+        flattenManifest(folderItem.sub || folderItem, base + folderName);
+      });
     }
   }
 
@@ -249,17 +257,37 @@
     searchableFiles = allFiles;   // store in the new flat list
   }
 
-  async function loadFolderManifests(parts){
-    const rel=parts.length?parts.join('/')+'/':'';
-    const folders=await fetchJSON('db/'+rel+'folders.json');
-    if(folders&&Array.isArray(folders)&&folders.length>0)return{type:'folders',data:folders};
-    const files=await fetchJSON('db/'+rel+'files.json');
-    if(files&&Array.isArray(files)&&files.length>0)return{type:'files',data:files};
-    if(parts.length===0){
-      const legacy=await fetchJSON('db/db.json');
-      if(legacy&&legacy.items)return{type:'legacy',data:legacy};
+  async function loadFolderManifests(parts) {
+    if (!fullManifest) {
+      console.warn('Manifest not loaded yet — fallback to old method');
+      // Your old fetch-based code here as fallback
+      const rel = parts.length ? parts.join('/') + '/' : '';
+      const folders = await fetchJSON('db/' + rel + 'folders.json');
+      if (folders && Array.isArray(folders)) return {type: 'folders', data: folders};
+      const files = await fetchJSON('db/' + rel + 'files.json');
+      if (files && Array.isArray(files)) return {type: 'files', data: files};
+      if (parts.length === 0) {
+        const legacy = await fetchJSON('db/db.json');
+        if (legacy && legacy.items) return {type: 'legacy', data: legacy};
+      }
+      return {type: 'empty', data: null};
     }
-    return{type:'empty',data:null};
+
+    // Traverse the manifest tree to the current path
+    let current = fullManifest;
+    for (const part of parts) {
+      const subFolder = current.folders.find(f => f.parsed.name === part);
+      if (!subFolder) return {type: 'empty', data: null};
+      current = subFolder.sub;
+    }
+
+    // Return data from this level
+    if (current.folders.length > 0) {
+      return {type: 'folders', data: current.folders.map(f => f.original)};  // original strings for compatibility
+    } else if (current.files.length > 0) {
+      return {type: 'files', data: current.files.map(f => f.original)};
+    }
+    return {type: 'empty', data: null};
   }
 
   function clearMenu(){ menuRoot.innerHTML=''; }
@@ -1087,12 +1115,27 @@
       e.preventDefault(); 
       if(pathParts.length>0){ 
         playSound('assets/sounds/blip.mp3','blip');
+        
+        // Save current state before popping
         const currentPathKey = pathParts.join('/');
-        navigationHistory[currentPathKey] = selected;
+        navigationHistory[currentPathKey] = {
+          selected: selected,
+          theme: currentTheme
+        };
+
         pathParts.pop();
+        
         const prevPathKey = pathParts.join('/');
-        selected = navigationHistory[prevPathKey] !== undefined ? navigationHistory[prevPathKey] : 0;
-        applyTheme('green');  
+        const prevState = navigationHistory[prevPathKey];
+        
+        if (prevState && typeof prevState === 'object') {
+          selected = prevState.selected !== undefined ? prevState.selected : 0;
+          applyTheme(prevState.theme || 'green');
+        } else {
+          selected = 0;
+          applyTheme('green');
+        }
+        
         refresh(); 
       } 
     }
@@ -1119,7 +1162,30 @@
     if(manifestResult.type === 'folders'){
       const folders = manifestResult.data;
       const isReturn = (pathParts.length>0 && selected===0);
-      if(isReturn){ pathParts.pop(); selected=0; applyTheme('green');  refresh(); return; }
+      if(isReturn){ 
+        // Save current before pop
+        const currentPathKey = pathParts.join('/');
+        navigationHistory[currentPathKey] = {
+          selected: selected,
+          theme: currentTheme
+        };
+
+        pathParts.pop();
+        
+        const prevPathKey = pathParts.join('/');
+        const prevState = navigationHistory[prevPathKey];
+        
+        if (prevState && typeof prevState === 'object') {
+          selected = prevState.selected !== undefined ? prevState.selected : 0;
+          applyTheme(prevState.theme || 'green');
+        } else {
+          selected = 0;
+          applyTheme('green');
+        }
+        
+        refresh(); 
+        return; 
+      }
       
       let visibleIdx = pathParts.length > 0 ? selected - 1 : selected;
       let actualIdx = -1;
@@ -1140,19 +1206,28 @@
         const entry = folders[actualIdx]; 
         const parsed = parseFolder(entry); 
         
-        if(parsed.isHidden && parsed.hiddenLevel > 0){
+        // Save current state BEFORE changing path
+        const currentPathKey = pathParts.join('/');
+        navigationHistory[currentPathKey] = {
+          selected: selected,
+          theme: currentTheme
+        };
+
+        // Apply new theme for the folder we're entering
+        if (parsed.isHidden && parsed.hiddenLevel > 0) {
           applyTheme('purple');
-        } else if(parsed.theme) {
+        } else if (parsed.theme) {
           applyTheme(parsed.theme);
         } else {
           applyTheme('green');
         }
-        
-        const currentPathKey = pathParts.join('/');
-        navigationHistory[currentPathKey] = selected;
-        
+
         pathParts.push(parsed.name); 
-        selected = navigationHistory[pathParts.join('/')] !== undefined ? navigationHistory[pathParts.join('/')] : 0;
+        
+        // Restore selected index for the new path (or default to 0)
+        const newPathKey = pathParts.join('/');
+        const newState = navigationHistory[newPathKey];
+        selected = (newState && typeof newState === 'object') ? (newState.selected || 0) : 0;
         
         refresh(); 
         return; 
@@ -1292,7 +1367,9 @@
   selected = 0; 
   applyTheme('green'); 
   refresh(); 
-  window.addEventListener('keydown', keyHandler);
+  window.addEventListener('keydown', async (e) => {
+    await keyHandler(e);
+  });
   refresh();
   buildSearchIndex();
 

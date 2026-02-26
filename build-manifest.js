@@ -29,6 +29,9 @@ function parseFolder(entry) {
     tags = parseTags(tagStr);
   }
 
+  const themeColors = { red:true, red2:true, red3:true, orange:true, yellow:true, green:true, cyan:true, blue:true, purple:true, pink:true, white:true };
+  const theme = tags.find(t => themeColors[t.toLowerCase()])?.toLowerCase() || null;
+
   let hiddenLevel = 0;
   for (let i = 1; i <= 6; i++) {
     if (tags.includes('hidden' + i)) {
@@ -40,7 +43,7 @@ function parseFolder(entry) {
     hiddenLevel = 1;
   }
 
-  return { name, hiddenLevel };
+  return { name, theme, hiddenLevel };
 }
 
 // Full port of parseFile from browser JS
@@ -86,7 +89,7 @@ const stats = {
   totalFolders: 0,
   totalFiles: 0,
   fileTypes: { txt: 0, md: 0, png: 0, mp3: 0 },
-  hiddenFolders: { total: 0, levels: [0, 0, 0, 0, 0, 0, 0] },  // levels[1] = level1 (6), etc.
+  hiddenFolders: { total: 0, levels: [0, 0, 0, 0, 0, 0, 0] },
   hiddenFiles: { total: 0, levels: [0, 0, 0, 0, 0, 0, 0] },
   lockedFiles: { total: 0, levels: [0, 0, 0, 0, 0, 0, 0] }
 };
@@ -106,14 +109,17 @@ function scanDir(dir) {
         if (Array.isArray(foldersJson)) {
           foldersJson.forEach(entry => {
             const parsed = parseFolder(entry);
-            const name = parsed.name;
-            const subDir = path.join(dir, name);
+            const subDir = path.join(dir, parsed.name);
             if (fs.existsSync(subDir) && fs.statSync(subDir).isDirectory()) {
               if (parsed.hiddenLevel > 0) {
                 stats.hiddenFolders.total++;
                 stats.hiddenFolders.levels[parsed.hiddenLevel]++;
               }
-              res.folders.push(scanDir(subDir));
+              res.folders.push({
+                original: entry,
+                parsed: parsed,
+                sub: scanDir(subDir)  // Recurse and nest the sub-manifest
+              });
             }
           });
         }
@@ -131,28 +137,29 @@ function scanDir(dir) {
       if (content) {
         const filesJson = JSON.parse(content);
         if (Array.isArray(filesJson)) {
-          res.files = filesJson;  // keep full entries with :tags
-          filesJson.forEach(entry => {
+          res.files = filesJson.map(entry => {
             const parsed = parseFile(entry);
             stats.totalFiles++;
             
-            // Count file types (based on extension after parsing name)
             const ext = parsed.name.split('.').pop().toLowerCase();
             if (stats.fileTypes.hasOwnProperty(ext)) {
               stats.fileTypes[ext]++;
             }
             
-            // Hidden files
             if (parsed.hiddenLevel > 0) {
               stats.hiddenFiles.total++;
               stats.hiddenFiles.levels[parsed.hiddenLevel]++;
             }
             
-            // Locked files
             if (parsed.lockedLevel > 0) {
               stats.lockedFiles.total++;
               stats.lockedFiles.levels[parsed.lockedLevel]++;
             }
+
+            return {
+              original: entry,
+              parsed: parsed
+            };
           });
         }
       }
@@ -160,10 +167,6 @@ function scanDir(dir) {
       console.warn(`Warning: Invalid or empty files.json in ${dir} → skipping (${err.message})`);
     }
   }
-
-  // Sort for consistency
-  res.folders.sort((a, b) => (a.name || '').localeCompare(b.name || ''));
-  res.files.sort();
 
   return res;
 }
