@@ -30,15 +30,17 @@ body.database-page{
 }
 
 /* Theme classes (preset colors) - use increased specificity to override base */
-body.database-page.theme-red{ --accent: #ff6b6b; --accent-strong: #ffd6d6; --accent-border: rgba(255,107,107,0.95); --accent-glow: rgba(255,107,107,0.06); --accent-glow-inset: rgba(255,107,107,0.08); --accent-text-shadow: rgba(255,160,160,0.12); --header-color: #ffe0e0; --text-color: #efc9c9; --hue: 0deg; }
-body.database-page.theme-orange{ --accent: #ff9f43; --accent-strong:#ffe8c7; --accent-border: rgba(255,159,67,0.95); --accent-glow: rgba(255,159,67,0.06); --accent-glow-inset: rgba(255,159,67,0.08); --accent-text-shadow: rgba(255,200,150,0.12); --header-color: #fff5e8; --text-color: #ffe0b3; --hue: 30deg; }
-body.database-page.theme-yellow{ --accent: #ffd43b; --accent-strong:#fff3c4; --accent-border: rgba(255,212,59,0.95); --accent-glow: rgba(255,212,59,0.06); --accent-glow-inset: rgba(255,212,59,0.08); --accent-text-shadow: rgba(255,240,200,0.12); --header-color: #fffef0; --text-color: #fff0cc; --hue: 60deg; }
+body.database-page.theme-red{ --accent: #ff6b6b; --highlight: #f08484; --accent-strong: #ffd6d6; --accent-border: rgba(255,107,107,0.95); --accent-glow: rgba(255,107,107,0.06); --accent-glow-inset: rgba(255,107,107,0.08); --accent-text-shadow: rgba(255,160,160,0.12); --header-color: #ffe0e0; --text-color: #efc9c9; --hue: 0deg; }
+body.database-page.theme-red2{ --accent: #f52664; --highlight: #ff729c; --accent-strong: #ffb3b3; --accent-border: rgba(255, 68, 115, 0.95); --accent-glow: rgba(255,68,68,0.06); --accent-glow-inset: rgba(255,68,68,0.08); --accent-text-shadow: rgba(255,150,150,0.12); --header-color: #ffcccc; --text-color: #f0b3b3; --hue: 0deg; }
+body.database-page.theme-red3{ --accent: #cc0742; --highlight: #ff729c; --accent-strong: #ffb3b3; --accent-border: rgba(190, 31, 31, 0.95); --accent-glow: rgba(255,68,68,0.06); --accent-glow-inset: rgba(255,68,68,0.08); --accent-text-shadow: rgba(255,150,150,0.12); --header-color: #ffcccc; --text-color: #f0b3b3; --hue: 0deg; }
+body.database-page.theme-orange{ --accent: #ff9f43; --highlight: #ffcc99; --accent-strong:#ffe8c7; --accent-border: rgba(255,159,67,0.95); --accent-glow: rgba(255,159,67,0.06); --accent-glow-inset: rgba(255,159,67,0.08); --accent-text-shadow: rgba(255,200,150,0.12); --header-color: #fff5e8; --text-color: #ffe0b3; --hue: 30deg; }
+body.database-page.theme-yellow{ --accent: #ffd43b; --highlight:#fff4a4; --accent-strong:#fff3c4; --accent-border: rgba(255,212,59,0.95); --accent-glow: rgba(255,212,59,0.06); --accent-glow-inset: rgba(255,212,59,0.08); --accent-text-shadow: rgba(255,240,200,0.12); --header-color: #fffef0; --text-color: #fff0cc; --hue: 60deg; }
 body.database-page.theme-green{ /* default */ }
-body.database-page.theme-cyan{ --accent:#3be8ff; --accent-strong:#dffaff; --accent-border: rgba(59,232,255,0.95); --accent-glow: rgba(59,232,255,0.06); --accent-glow-inset: rgba(59,232,255,0.08); --accent-text-shadow: rgba(180,255,255,0.12); --header-color: #dafbff; --text-color: #b3e8ff; --hue: 180deg; }
-body.database-page.theme-blue{ --accent:#4da6ff; --accent-strong:#d8ecff; --accent-border: rgba(77,166,255,0.95); --accent-glow: rgba(77,166,255,0.06); --accent-glow-inset: rgba(77,166,255,0.08); --accent-text-shadow: rgba(180,200,255,0.12); --header-color: #e0f0ff; --text-color: #c9deff; --hue: 240deg; }
-body.database-page.theme-purple{ --accent:#b39bff; --accent-strong:#efe7ff; --accent-border: rgba(179,155,255,0.95); --accent-glow: rgba(179,155,255,0.06); --accent-glow-inset: rgba(179,155,255,0.08); --accent-text-shadow: rgba(220,200,255,0.12); --header-color: #f0e8ff; --text-color: #e0d1ff; --hue: 270deg; }
-body.database-page.theme-pink{ --accent:#ff8fcf; --accent-strong:#ffe0f4; --accent-border: rgba(255,143,207,0.95); --accent-glow: rgba(255,143,207,0.06); --accent-glow-inset: rgba(255,143,207,0.08); --accent-text-shadow: rgba(255,200,240,0.12); --header-color: #ffe8f5; --text-color: #ffc9e0; --hue: 300deg; }
-body.database-page.theme-white{ --accent:#ffffff; --accent-strong:#ffffff; --accent-border: rgba(255,255,255,0.95); --accent-glow: rgba(255,255,255,0.06); --accent-glow-inset: rgba(255,255,255,0.08); --accent-text-shadow: rgba(255,255,255,0.12); --header-color: #f5f5f5; --text-color: #d9d9d9; --hue: 0deg; }
+body.database-page.theme-cyan{ --accent:#3be8ff; --highlight: #a0f0ff; --accent-strong:#dffaff; --accent-border: rgba(59,232,255,0.95); --accent-glow: rgba(59,232,255,0.06); --accent-glow-inset: rgba(59,232,255,0.08); --accent-text-shadow: rgba(180,255,255,0.12); --header-color: #dafbff; --text-color: #b3e8ff; --hue: 180deg; }
+body.database-page.theme-blue{ --accent:#4da6ff; --highlight: #a7d7ff; --accent-strong:#d8ecff; --accent-border: rgba(77,166,255,0.95); --accent-glow: rgba(77,166,255,0.06); --accent-glow-inset: rgba(77,166,255,0.08); --accent-text-shadow: rgba(180,200,255,0.12); --header-color: #e0f0ff; --text-color: #c9deff; --hue: 240deg; }
+body.database-page.theme-purple{ --accent:#c531ff; --highlight: #af72ff; --accent-strong:#efe7ff; --accent-border: rgba(182, 94, 255, 0.95); --accent-glow: rgba(179,155,255,0.06); --accent-glow-inset: rgba(179,155,255,0.08); --accent-text-shadow: rgba(220,200,255,0.12); --header-color: #f0e8ff; --text-color: #e0d1ff; --hue: 270deg; }
+body.database-page.theme-pink{ --accent:#ff8fcf; --highlight: #ff9fcf; --accent-strong:#ffe0f4; --accent-border: rgba(255,143,207,0.95); --accent-glow: rgba(255,143,207,0.06); --accent-glow-inset: rgba(255,143,207,0.08); --accent-text-shadow: rgba(255,200,240,0.12); --header-color: #ffe8f5; --text-color: #ffc9e0; --hue: 300deg; }
+body.database-page.theme-white{ --accent:#ffffff; --highlight: #e6e3e3; --accent-strong:#ffffff; --accent-border: rgba(255,255,255,0.95); --accent-glow: rgba(255,255,255,0.06); --accent-glow-inset: rgba(255,255,255,0.08); --accent-text-shadow: rgba(255,255,255,0.12); --header-color: #f5f5f5; --text-color: #d9d9d9; --hue: 0deg; }
 
 /* ==========================
    Database page (menu/viewer)
@@ -71,7 +73,18 @@ body.database-page.locked .viewer-column{display:none}
 /* Holographic menu items (rectangular, strong green glow) */
 .menu-item{width:100%;box-sizing:border-box;padding:1.4vh 1.8vh;border-radius:0.25vh;background:linear-gradient(180deg,rgba(10,30,22,0.14),rgba(5,20,12,0.04));color:var(--accent-strong);display:flex;align-items:center;justify-content:flex-start;font-family:'Press Start 2P',monospace;font-size:1.6vh;letter-spacing:0.06vh;backdrop-filter: blur(4px);-webkit-backdrop-filter: blur(4px);border:0.1vh solid var(--accent-border);box-shadow:0 0 8vh var(--accent-glow),0 0 4vh var(--accent-glow-inset) inset;text-shadow:0 0 0.8vh var(--accent-text-shadow);opacity:0.65;transform:scale(0.98);transition:all 180ms cubic-bezier(.2,.9,.2,1);cursor:default;min-height:2.2em}
 .menu-item .label{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:var(--accent-strong)}
-.menu-item.highlight{opacity:1;transform:scale(1.06);box-shadow:0 0 24vh var(--accent-glow),0 0 96px rgba(230,255,220,0.28) inset;border-color:rgba(255,255,250,0.98);color:var(--header-color);text-shadow:0 0 12px var(--accent-glow-inset)}
+.menu-item.highlight {
+    opacity: 1;
+    transform: scale(1.06);
+    background: linear-gradient(180deg, rgba(var(--accent-rgb, 144,255,180), 0.25), rgba(var(--accent-rgb, 144,255,180), 0.12));
+    border-color: var(--highlight);
+    box-shadow: 
+        0 0 32vh var(--accent-glow),
+        0 0 16vh var(--accent-glow-inset) inset,
+        0 0 48px rgba(var(--accent-rgb, 144,255,180), 0.35);
+    color: var(--header-color);
+    text-shadow: 0 0 1.2vh var(--accent-glow), 0 0 0.6vh #000;
+}
 .menu-item.dim-1{opacity:0.95;transform:scale(1);box-shadow:0 0 16vh var(--accent-glow),0 0 4vh var(--accent-glow-inset) inset}
 .menu-item.dim-2{opacity:0.8;transform:scale(0.995);box-shadow:0 0 12vh var(--accent-glow),0 0 4vh var(--accent-glow-inset) inset}
 .menu-item.dim-3{opacity:0.45;transform:scale(0.98);box-shadow:0 0 8vh var(--accent-glow),0 0 4vh var(--accent-glow-inset) inset}
@@ -92,7 +105,7 @@ body.database-page.locked .viewer-column{display:none}
 /* File viewer on the right - 3-part structure: header | scrollbar area | content */
 .file-view{width:68%;height:70vh;border-radius:0;background:linear-gradient(180deg,rgba(5,12,6,0.06),rgba(5,12,6,0.02));border:0.1vh solid var(--accent-border);box-shadow:0 0 20vh var(--accent-glow),0 0 8vh rgba(200,255,200,0.04) inset;color:var(--text-color);display:none;flex-direction:column;overflow:hidden}
 .file-view.visible{display:flex}
-.file-header{font-family:'Press Start 2P',monospace;font-size:1.2vh;padding:0.8vh 1.2vh;border-bottom:0.1vh solid var(--accent-border);color:var(--header-color);flex-shrink:0;text-transform:uppercase;letter-spacing:0.1vh}
+.file-header{font-family:'Press Start 2P',monospace;font-size:1.2vh;padding:0.8vh 1.2vh;border-bottom:0 var(--accent-border.1vh solid);color:var(--header-color);flex-shrink:0;text-transform:uppercase;letter-spacing:0.1vh}
 .file-scrollbar-container{display:flex;flex:1;overflow:hidden;gap:0}
 .file-content{flex:1;overflow-y:scroll;overflow-x:hidden;padding:1.2vh;font-family:'Press Start 2P',monospace;background:rgba(0,0,0,0.02);color:var(--text-color);line-height:1.5;font-size:1.2vh;white-space:pre-wrap;word-wrap:break-word;scrollbar-width:none}
 .file-content::-webkit-scrollbar{display:none}
@@ -151,12 +164,34 @@ body.database-page.locked .viewer-column{display:none}
 
 .audio-btn[data-audio-control="download"]{min-width:7vh}
 
-/* Prevent accidental selection/drag of buttons and images */
-.audio-btn, .audio-btn img, .audio-btn .fallback-text, .audio-speaker {
+/* Prevent accidental selection/drag - apply to everything */
+* {
     user-select: none;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
+}
+
+/* Allow text selection only in file content for txt/md files */
+.file-content {
+    user-select: text;
+    -webkit-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+}
+
+.file-content p,
+.file-content span,
+.file-content code,
+.file-content pre,
+.file-content li,
+.file-content h1,
+.file-content h2,
+.file-content h3 {
+    user-select: text;
+    -webkit-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
 }
 
 /* Search button - with menu-item class (identical to other menu items) */
@@ -286,7 +321,7 @@ body.database-page.locked .viewer-column{display:none}
 /* Result Count */
 .result-count {
     font-family: 'Press Start 2P', monospace;
-    font-size: 1vh;
+    font-size: 1.3vh;
     color: var(--text-color);
     text-align: center;
     margin-bottom: 1vh;
@@ -303,7 +338,116 @@ body.database-page.locked .viewer-column{display:none}
 /* Search result level text (for hidden files in search) */
 .menu-item .file-level {
     font-size: 0.7vh;
-    opacity: 0.5;
+    opacity: 0.7;
+    font-weight: normal;
+    color: #ebc855;
+    margin-left: 0.5vh;
+}
+
+/* File header locked text */
+.file-header .file-locked {
+    font-size: 0.8vh;
+    opacity: 0.7;
+    font-weight: normal;
+    color: #ff6b6b;
+    margin-left: 0.5vh;
+}
+
+/* Search result locked text */
+.menu-item .file-locked {
+    font-size: 1.1vh;
+    opacity: 1;
+    font-weight: normal;
+    color: #ff6b6b;
+    margin-left: 0.5vh;
+}
+
+.menu-item .file-hidden {
+    font-size: 1.1vh;
+    opacity: 1;
+    font-weight: normal;
+    color: #ffd86b;
+    margin-left: 0.5vh;
+}
+
+
+/* Access Denied message in file viewer */
+.access-denied {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    padding: 2vh;
+}
+
+.access-denied-main {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 2vh;
+    color: #ff6b6b;
+    text-shadow: 0 0 10px rgba(255, 107, 107, 0.5);
+    margin-bottom: 1vh;
+}
+
+.access-denied-level {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 1vh;
+    color: var(--text-color);
+    opacity: 0.7;
+}
+
+/* Access Denied Overlay for locked images - positioned ON TOP of the image */
+.access-denied-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 10;
+    pointer-events: none;
+}
+
+/* Locked image container */
+.locked-image-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+/* Hidden file tag (yellow) */
+.file-hidden {
+    font-size: 0.8vh;
+    color: #ffd43b;
     font-weight: normal;
     margin-left: 0.5vh;
+    text-shadow: 0 0 5px rgba(255, 212, 59, 0.5);
+}
+
+/* Locked file tag (brighter red) */
+.file-locked {
+    font-size: 0.8vh;
+    color: #ff4444;
+    font-weight: normal;
+    margin-left: 0.5vh;
+    text-shadow: 0 0 5px rgba(255, 68, 68, 0.5);
+}
+
+/* Search result hidden/locked tags */
+.menu-item .file-hidden {
+    font-size: 0.7vh;
+}
+
+.menu-item .file-locked {
+    font-size: 0.7vh;
 }

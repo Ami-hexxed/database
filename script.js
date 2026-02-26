@@ -10,7 +10,6 @@
   let searchResults = [];
   let specialAccessLevel = 0;
   let isCommandMode = false;
-  // Navigation history to remember selected position at each path level
   const navigationHistory = {};
   const fileView = document.getElementById('fileView');
   const fileHeader = document.getElementById('fileHeader');
@@ -19,8 +18,11 @@
   let searchInput = null;
   let commandModal = null;
   let commandInput = null;
+  // === FAST SEARCH INDEX ===
+  let searchableFiles = [];   // flat list of all files (built once)
+  let indexBuilt = false;
 
-  const themeColors = { red:true, orange:true, yellow:true, green:true, cyan:true, blue:true, purple:true, pink:true, white:true };
+  const themeColors = { red:true, red2:true, red3:true, orange:true, yellow:true, green:true, cyan:true, blue:true, purple:true, pink:true, white:true };
   let currentTheme = 'green';
 
   const levelNames = {
@@ -28,23 +30,49 @@
     2: 'Level 9 Access', 
     3: 'Level 10 Access',
     4: 'Level 11 Access',
-    5: 'Level 12 Access'
+    5: 'Level 12 Access',
+    6: 'Level 13 Access'
   };
+
+  // Blur intensity for locked images (adjustable)
+  const LOCKED_IMAGE_BLUR = 10;
+
+  function parseTags(str) {
+    const parts = str.split(':').map(p => p.trim()).filter(Boolean);
+    const tags = [];
+    for (const part of parts) {
+      if (part.includes(',')) {
+        const commaParts = part.split(',').map(p => p.trim()).filter(Boolean);
+        tags.push(...commaParts);
+      } else if (part) {
+        tags.push(part);
+      }
+    }
+    return tags;
+  }
 
   function parseFolder(entry){
     const str = (typeof entry === 'string') ? entry : (entry.label || entry.name || '');
-    const parts = String(str).replace(/\/$/,'').split(':');
-    const name = parts[0].trim();
-    const theme = (parts[1] && themeColors[parts[1].toLowerCase()]) ? parts[1].toLowerCase() : null;
+    const firstColon = str.indexOf(':');
+    let name = str;
+    let tags = [];
+    
+    if (firstColon !== -1) {
+      name = str.substring(0, firstColon).trim();
+      const tagStr = str.substring(firstColon + 1);
+      tags = parseTags(tagStr);
+    }
+    
+    const theme = tags.find(t => themeColors[t.toLowerCase()])?.toLowerCase() || null;
     
     let hiddenLevel = 0;
-    for(let i = 1; i <= 5; i++){
-      if(parts.includes('hidden'+i)){
+    for(let i = 1; i <= 6; i++){
+      if(tags.includes('hidden'+i)){
         hiddenLevel = i;
         break;
       }
     }
-    if(parts.includes('hidden') && hiddenLevel === 0){
+    if(tags.includes('hidden') && hiddenLevel === 0){
       hiddenLevel = 1;
     }
     
@@ -54,22 +82,74 @@
 
   function parseFile(entry){
     const str = typeof entry === 'string' ? entry : (entry.name || entry.label || '');
-    const parts = str.split(':');
-    const name = parts[0].trim();
+    const firstColon = str.indexOf(':');
+    let name = str;
+    let tags = [];
+    
+    if (firstColon !== -1) {
+      name = str.substring(0, firstColon).trim();
+      const tagStr = str.substring(firstColon + 1);
+      tags = parseTags(tagStr);
+    }
     
     let hiddenLevel = 0;
-    for(let i = 1; i <= 5; i++){
-      if(parts.includes('hidden'+i)){
+    for(let i = 1; i <= 6; i++){
+      if(tags.includes('hidden'+i)){
         hiddenLevel = i;
         break;
       }
     }
-    if(parts.includes('hidden') && hiddenLevel === 0){
+    if(tags.includes('hidden') && hiddenLevel === 0){
       hiddenLevel = 1;
     }
     
+    let lockedLevel = 0;
+    for(let i = 1; i <= 6; i++){
+      if(tags.includes('locked'+i)){
+        lockedLevel = i;
+        break;
+      }
+    }
+    if(tags.includes('locked') && lockedLevel === 0){
+      lockedLevel = 1;
+    }
+    
     const isHidden = hiddenLevel > 0;
-    return { name, isHidden, hiddenLevel };
+    const isLocked = lockedLevel > 0;
+    return { name, isHidden, hiddenLevel, isLocked, lockedLevel };
+  }
+  
+  // Map hidden/locked level (1-6) to actual access level (6-13)
+  function getActualAccessLevel(level) {
+    if (level === 0) return 0;
+    if (level === 1) return 6;
+    if (level === 2) return 9;
+    if (level === 3) return 10;
+    if (level === 4) return 11;
+    if (level === 5) return 12;
+    if (level === 6) return 13;
+    return level;
+  }
+  
+  function formatHiddenLockedDisplay(hiddenLevel, lockedLevel) {
+    let parts = [];
+    if (hiddenLevel > 0) {
+      const actualLevel = getActualAccessLevel(hiddenLevel);
+      if (hiddenLevel === 6) {
+        parts.push('<span class="file-hidden">H</span>');
+      } else {
+        parts.push('<span class="file-hidden">H' + actualLevel + '</span>');
+      }
+    }
+    if (lockedLevel > 0) {
+      const actualLevel = getActualAccessLevel(lockedLevel);
+      if (lockedLevel === 6) {
+        parts.push('<span class="file-locked">L</span>');
+      } else {
+        parts.push('<span class="file-locked">L' + actualLevel + '</span>');
+      }
+    }
+    return parts.join(' ');
   }
 
   function applyTheme(theme){
@@ -81,6 +161,92 @@
 
   async function fetchJSON(path){
     try{ const r=await fetch(path); if(!r.ok)return null; return JSON.parse(await r.text()); }catch(e){return null;}
+  }
+  // =============================================================================
+  // FAST SEARCH INDEX - built once on page load
+  // =============================================================================
+  async function buildSearchIndex() {
+    if (indexBuilt) return;
+
+    console.time('Build search index');
+    searchableFiles = [];
+
+    // 1. Try the super-fast manifest first (recommended)
+    try {
+      const manifest = await fetchJSON('db-manifest.json');
+      if (manifest && manifest.name) {
+        flattenManifest(manifest, '');
+        indexBuilt = true;
+        console.log(`✅ Search index ready — ${searchableFiles.length} files (from manifest)`);
+        console.timeEnd('Build search index');
+        return;
+      }
+    } catch(e) {}
+
+    // 2. Fallback to old slow method if manifest doesn't exist yet
+    console.warn('⚠️ db-manifest.json not found — using slower fallback');
+    await getAllFilesForSearchFallback();
+    indexBuilt = true;
+    console.timeEnd('Build search index');
+  }
+
+  function flattenManifest(node, currentPath) {
+    const base = currentPath ? currentPath + '/' : '';
+
+    // Add files from this folder
+    if (node.files && Array.isArray(node.files)) {
+      for (const fileName of node.files) {
+        const parsed = parseFile(fileName);
+        searchableFiles.push({
+          path: /* 'db/' + */ base + parsed.name,
+          name: parsed.name,
+          parsed: parsed,
+          baseName: parsed.name.split('.')[0]   // for exact match without extension
+        });
+      }
+    }
+
+  // Recurse into subfolders
+    if (node.folders && Array.isArray(node.folders)) {
+      for (const folderNode of node.folders) {
+        const folderName = folderNode.name || (typeof folderNode === 'string' ? folderNode : '');
+        flattenManifest(folderNode, base + folderName);
+      }
+    }
+  }
+
+  // Rename your old function so we can keep it as fallback
+  async function getAllFilesForSearchFallback() {
+    const allFiles = [];
+    const allFolders = [''];
+
+    async function findFolders(basePath) {
+      const foldersJson = await fetchJSON('db/' + basePath + 'folders.json');
+      if (foldersJson && Array.isArray(foldersJson)) {
+        for (const f of foldersJson) {
+          const parsed = parseFolder(f);
+          const newPath = basePath + parsed.name + '/';
+          allFolders.push(newPath);
+          await findFolders(newPath);
+        }
+      }
+    }
+    await findFolders('');
+
+    for (const folder of allFolders) {
+      const filesJson = await fetchJSON('db/' + folder + 'files.json');
+      if (filesJson && Array.isArray(filesJson)) {
+        for (const file of filesJson) {
+          const parsed = parseFile(file);
+          allFiles.push({
+            path: 'db/' + folder + parsed.name,
+            name: parsed.name,
+            parsed: parsed
+          });
+        }
+      }
+    }
+    searchableFiles = allFiles;   // store in the new flat list
   }
 
   async function loadFolderManifests(parts){
@@ -188,7 +354,15 @@
         const parsed = parseFile(entry);
         const span=document.createElement('span'); 
         span.className='label'; 
-        span.textContent = parsed.name; 
+        
+        // Show HxLx tags for hidden/locked files
+        const hlDisplay = formatHiddenLockedDisplay(parsed.hiddenLevel, parsed.lockedLevel);
+        if (hlDisplay) {
+          span.innerHTML = parsed.name + ' ' + hlDisplay;
+        } else {
+          span.textContent = parsed.name; 
+        }
+        
         li.appendChild(span); 
         if(dist===0) li.classList.add('highlight'); 
         else if(dist<=4) li.classList.add('dim-'+dist); 
@@ -217,7 +391,6 @@
     const items = searchResults || [];
     const slots = 9;
     const center = Math.floor(slots/2);
-    // total items = search results + 1 for RETURN button
     const totalItems = items.length + 1;
     
     for(let s=0; s<slots; s++){
@@ -232,22 +405,25 @@
         li.appendChild(document.createElement('span')); 
         if(dist>=1 && dist<=4) li.classList.add('dim-'+dist); 
       }else if(idx === 0){
-        // RETURN button
         li.innerHTML = '<span class="label">RETURN</span>';
         if(dist===0) li.classList.add('highlight'); 
         else if(dist<=4) li.classList.add('dim-'+dist);
       }else{
-        // Search result
         const itemIdx = idx - 1;
         if(itemIdx >= 0 && itemIdx < items.length){
           const item = items[itemIdx];
           const span = document.createElement('span');
           span.className = 'label';
           
-          // Check if this is a hidden file and show level if so
-          if(item.parsed && item.parsed.isHidden && item.parsed.hiddenLevel > 0){
-            const levelText = levelNames[item.parsed.hiddenLevel] || 'Level ' + item.parsed.hiddenLevel + ' Access';
-            span.innerHTML = item.name + ' <span class="file-level">' + levelText + '</span>';
+          // Show HxLx tags for hidden/locked files in search results
+          const parsed = item.parsed;
+          if (parsed) {
+            const hlDisplay = formatHiddenLockedDisplay(parsed.hiddenLevel, parsed.lockedLevel);
+            if (hlDisplay) {
+              span.innerHTML = item.name + ' ' + hlDisplay;
+            } else {
+              span.textContent = item.name;
+            }
           } else {
             span.textContent = item.name;
           }
@@ -294,6 +470,8 @@
     searchModal.classList.add('visible');
     searchInput.value = '';
     searchInput.focus();
+    // Pre-build index so first search is instant
+    if (!indexBuilt) buildSearchIndex();
   }
 
   function closeSearchModal(){
@@ -329,18 +507,16 @@
 
   function processCommand(cmd){
     const code = cmd.trim().toLowerCase();
-    for(let i = 1; i <= 5; i++){
+    for(let i = 1; i <= 6; i++){
       if(code === 'code'+i){
         specialAccessLevel = i;
         updateSpecialAccessIndicator();
         playSound('assets/sounds/blip.mp3', 'blip');
         closeCommandModal();
-        
         refresh();
         return true;
       }
     }
-    // Invalid code - still close the modal
     closeCommandModal();
     return false;
   }
@@ -349,10 +525,17 @@
     if(specialAccessLevel > 0){
       specialAccessLevel = 0;
       updateSpecialAccessIndicator();
-      while(pathParts.length > 0) pathParts.pop();
-      selected = 0;
-      
-      refresh();
+      // Stay on current view instead of going back to initial menu
+      if(isSearchMode){
+        renderSearchResults();
+        updateHighlight();
+      } else if(mode === 'file'){
+        // If in file viewer, close it and refresh the menu
+        closeFileView();
+        refresh();
+      } else {
+        refresh();
+      }
     }
   }
 
@@ -365,7 +548,6 @@
       if(foldersJson && Array.isArray(foldersJson)){
         for(const f of foldersJson){
           const parsed = parseFolder(f);
-          if(parsed.isHidden && parsed.hiddenLevel > specialAccessLevel) continue;
           const newPath = basePath + parsed.name + '/';
           allFolders.push(newPath);
           await findFolders(newPath);
@@ -379,7 +561,6 @@
       if(filesJson && Array.isArray(filesJson)){
         for(const file of filesJson){
           const parsed = parseFile(file);
-          // Include all files in search (hidden files are visible but without revealing content)
           allFiles.push({ path: folder + parsed.name, name: parsed.name, parsed: parsed });
         }
       }
@@ -388,23 +569,22 @@
     return allFiles;
   }
 
-  async function performSearch(query){
-    if(!query || query.trim() === ''){
+  async function performSearch(query) {
+  // Build index on first search (or if not ready)
+    if (!indexBuilt) {
+      await buildSearchIndex();
+    }
+
+    if (!query || query.trim() === '') {
       searchResults = [];
       return;
     }
-    
-    const allFiles = await getAllFilesForSearch();
+
     const searchTerm = query.trim().toLowerCase();
-    
-    searchResults = allFiles
-      .filter(f => {
-        const filename = f.path.split('/').pop();
-        const nameWithoutExt = filename.split('.')[0];
-        return nameWithoutExt.toLowerCase() === searchTerm;
-      });
-    
-    console.log('Search results for "' + searchTerm + '":', searchResults);
+
+    searchResults = searchableFiles.filter(f =>
+      f.baseName.toLowerCase() === searchTerm
+    );
   }
 
   function enterSearchResults(){
@@ -422,7 +602,6 @@
     while(pathParts.length > 0) pathParts.pop();
     selected = 0;
     applyTheme('green');
-    
     refresh();
   }
 
@@ -432,40 +611,73 @@
     
     let isHidden = false;
     let hiddenLevel = 0;
+    let isLocked = false;
+    let lockedLevel = 0;
     
     if(fileEntry){
       isHidden = fileEntry.isHidden;
       hiddenLevel = fileEntry.hiddenLevel;
+      isLocked = fileEntry.isLocked;
+      lockedLevel = fileEntry.lockedLevel;
     } else {
       const parsed = parseFile(label);
       isHidden = parsed.isHidden;
       hiddenLevel = parsed.hiddenLevel;
+      isLocked = parsed.isLocked;
+      lockedLevel = parsed.lockedLevel;
     }
     
-    let headerText = label;
-    if(isHidden && hiddenLevel > 0){
-      fileHeader.innerHTML = '<span class="file-name">' + label + '</span> <span class="file-level">' + levelNames[hiddenLevel] + '</span>';
-    } else {
-      fileHeader.textContent = headerText;
-    }
+    // Show file path in header instead of hidden/locked info
+    const displayPath = pathPartsLocal.length > 0 ? pathPartsLocal.join('/') + '/' : '';
+    fileHeader.textContent = displayPath;
     
     const relPath = pathPartsLocal.length>0 ? pathPartsLocal.join('/') + '/' : '';
     const path = 'db/'+relPath+label;
     const filetype = getFileType(label);
     
+    // Check if file is locked and user doesn't have access
+    const hasLockedAccess = !isLocked || lockedLevel <= specialAccessLevel;
+    
     if(filetype === 'image'){
       fileContent.innerHTML=''; 
+      const container = document.createElement('div');
+      container.className = 'locked-image-container';
+      
       const img=document.createElement('img'); 
       img.src=path; 
       img.style.maxWidth='100%'; 
       img.style.maxHeight='100%'; 
       img.style.objectFit='contain'; 
-      fileContent.appendChild(img); 
+      
+      // If user has NO access, show blurred image with overlay on top
+      if(!hasLockedAccess){
+        img.style.filter = 'blur(' + LOCKED_IMAGE_BLUR + 'px)';
+        
+        // Add access denied overlay ON TOP of the image
+        const accessLevelText = levelNames[lockedLevel] || 'Level ' + lockedLevel + ' Access';
+        const overlay = document.createElement('div');
+        overlay.className = 'access-denied-overlay';
+        overlay.innerHTML = '<div class="access-denied-main">Access Denied</div><div class="access-denied-level">' + accessLevelText + ' Required</div>';
+        container.appendChild(img);
+        container.appendChild(overlay);
+      } else {
+        // User has access - show normal image
+        container.appendChild(img);
+      }
+      
+      fileContent.appendChild(container); 
       initializeScrollbar(); 
       updateScrollbarThumb();
     } else if(filetype === 'audio'){
       buildCustomAudioPlayer(label, path);
     } else if(filetype === 'md' || filetype === 'txt'){
+      // For text files, check access
+      if(!hasLockedAccess){
+        const accessLevelText = levelNames[lockedLevel] || 'Level ' + lockedLevel + ' Access';
+        fileContent.innerHTML = '<div class="access-denied"><div class="access-denied-main">Access Denied</div><div class="access-denied-level">' + accessLevelText + ' Required</div></div>';
+        initializeScrollbar();
+        return;
+      }
       fetch(path).then(r=>{ 
         if(!r.ok) throw new Error('Failed to load'); 
         return r.text(); 
@@ -706,6 +918,18 @@
     
     if(isSearchMode && mode === 'menu'){
       const n = searchResults.length + 1;
+      
+      // Period key in search mode
+      if(e.key === '.'){
+        e.preventDefault();
+        if(specialAccessLevel > 0){
+          toggleSpecialAccess();
+        } else {
+          openCommandModal();
+        }
+        return;
+      }
+      
       if(e.key==='ArrowDown' || e.key==='s'){ 
         e.preventDefault(); 
         const newSel = clamp(selected+1,0,n-1); 
@@ -750,6 +974,17 @@
     }
     
     if(mode==='file'){
+      // Period key in file viewer mode
+      if(e.key === '.'){
+        e.preventDefault();
+        if(specialAccessLevel > 0){
+          toggleSpecialAccess();
+        } else {
+          openCommandModal();
+        }
+        return;
+      }
+      
       const audioPlayer = fileContent.querySelector('.custom-audio-player');
       if(audioPlayer){
         const buttons = audioPlayer.querySelectorAll('.audio-btn');
@@ -852,18 +1087,11 @@
       e.preventDefault(); 
       if(pathParts.length>0){ 
         playSound('assets/sounds/blip.mp3','blip');
-        
-        // Save current position before going back
         const currentPathKey = pathParts.join('/');
         navigationHistory[currentPathKey] = selected;
-        
-        // Go back to previous path
         pathParts.pop();
-        
-        // Restore the selected position from history, or default to 0
         const prevPathKey = pathParts.join('/');
         selected = navigationHistory[prevPathKey] !== undefined ? navigationHistory[prevPathKey] : 0;
-        
         applyTheme('green');  
         refresh(); 
       } 
@@ -920,7 +1148,6 @@
           applyTheme('green');
         }
         
-        // Save current position to history before navigating into folder
         const currentPathKey = pathParts.join('/');
         navigationHistory[currentPathKey] = selected;
         
@@ -954,7 +1181,6 @@
           const name = (it.label||'').replace(/\/$/,'').replace(/\s+/g,''); 
           pathParts.push(name); 
           selected=0; 
-          
           refresh(); 
         }
         else if(legacy.filetype){ openFileViewer(it.label, pathParts.slice(), null); }
@@ -1067,9 +1293,7 @@
   applyTheme('green'); 
   refresh(); 
   window.addEventListener('keydown', keyHandler);
-
-  
   refresh();
-
+  buildSearchIndex();
 
 })();

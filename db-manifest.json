@@ -1,0 +1,931 @@
+{
+  "name": "db",
+  "folders": [
+    {
+      "name": "events",
+      "folders": [
+        {
+          "name": "anomalous",
+          "folders": [],
+          "files": []
+        },
+        {
+          "name": "historical",
+          "folders": [],
+          "files": [
+            "pixie.txt"
+          ]
+        },
+        {
+          "name": "major-incidents",
+          "folders": [],
+          "files": [
+            "pixie.txt:hidden2"
+          ]
+        },
+        {
+          "name": "minor-incidents",
+          "folders": [],
+          "files": []
+        },
+        {
+          "name": "training",
+          "folders": [],
+          "files": []
+        }
+      ],
+      "files": []
+    },
+    {
+      "name": "index",
+      "folders": [
+        {
+          "name": "alien",
+          "folders": [],
+          "files": []
+        },
+        {
+          "name": "conceptuals",
+          "folders": [],
+          "files": []
+        },
+        {
+          "name": "gifted",
+          "folders": [],
+          "files": []
+        },
+        {
+          "name": "mutates",
+          "folders": [],
+          "files": []
+        },
+        {
+          "name": "other",
+          "folders": [],
+          "files": []
+        },
+        {
+          "name": "sorcerers",
+          "folders": [],
+          "files": []
+        },
+        {
+          "name": "summoners",
+          "folders": [],
+          "files": []
+        },
+        {
+          "name": "tech",
+          "folders": [],
+          "files": []
+        },
+        {
+          "name": "vessels",
+          "folders": [],
+          "files": []
+        },
+        {
+          "name": "wielders",
+          "folders": [],
+          "files": []
+        },
+        {
+          "name": "witches",
+          "folders": [],
+          "files": [
+            "pixie.md:hidden1"
+          ]
+        }
+      ],
+      "files": []
+    },
+    {
+      "name": "lifeforms",
+      "folders": [
+        {
+          "name": "animals",
+          "folders": [],
+          "files": []
+        },
+        {
+          "name": "other",
+          "folders": [],
+          "files": []
+        },
+        {
+          "name": "people",
+          "folders": [],
+          "files": []
+        },
+        {
+          "name": "plants",
+          "folders": [],
+          "files": []
+        }
+      ],
+      "files": []
+    },
+    {
+      "name": "locations",
+      "folders": [
+        {
+          "name": "alien",
+          "folders": [
+            {
+              "name": "moons",
+              "folders": [],
+              "files": []
+            },
+            {
+              "name": "other",
+              "folders": [],
+              "files": []
+            },
+            {
+              "name": "planets",
+              "folders": [],
+              "files": []
+            },
+            {
+              "name": "structures",
+              "folders": [],
+              "files": []
+            },
+            {
+              "name": "systems",
+              "folders": [],
+              "files": []
+            }
+          ],
+          "files": []
+        },
+        {
+          "name": "anomalous",
+          "folders": [],
+          "files": []
+        },
+        {
+          "name": "other",
+          "folders": [],
+          "files": []
+        },
+        {
+          "name": "strategic",
+          "folders": [
+            {
+              "name": "allied",
+              "folders": [],
+              "files": []
+            },
+            {
+              "name": "hostile",
+              "folders": [],
+              "files": []
+            },
+            {
+              "name": "neutral",
+              "folders": [],
+              "files": []
+            },
+            {
+              "name": "rival",
+              "folders": [],
+              "files": []
+            },
+            {
+              "name": "uncontrolled",
+              "folders": [],
+              "files": []
+            }
+          ],
+          "files": []
+        }
+      ],
+      "files": []
+    },
+    {
+      "name": "organizations",
+      "folders": [
+        {
+          "name": "allied",
+          "folders": [],
+          "files": []
+        },
+        {
+          "name": "defunct",
+          "folders": [],
+          "files": []
+        },
+        {
+          "name": "hostile",
+          "folders": [],
+          "files": []
+        },
+        {
+          "name": "neutral",
+          "folders": [],
+          "files": []
+        },
+        {
+          "name": "rival",
+          "folders": [],
+          "files": []
+        }
+      ],
+      "files": []
+    },
+    {
+      "name": "people",
+      "folders": [
+        {
+          "name": "heroes",
+          "folders": [
+            {
+              "name": "active",
+              "folders": [],
+              "files": []
+            },
+            {
+              "name": "deceased",
+              "folders": [],
+              "files": []
+            },
+            {
+              "name": "defected",
+              "folders": [],
+              "files": []
+            },
+            {
+              "name": "inactive",
+              "folders": [],
+              "files": []
+            },
+            {
+              "name": "missing",
+              "folders": [],
+              "files": []
+            },
+            {
+              "name": "unknown",
+              "folders": [],
+              "files": []
+            }
+          ],
+          "files": []
+        },
+        {
+          "name": "neutral",
+          "folders": [
+            {
+              "name": "active",
+              "folders": [],
+              "files": []
+            },
+            {
+              "name": "deceased",
+              "folders": [],
+              "files": []
+            },
+            {
+              "name": "inactive",
+              "folders": [],
+              "files": []
+            },
+            {
+              "name": "unknown",
+              "folders": [],
+              "files": []
+            }
+          ],
+          "files": []
+        },
+        {
+          "name": "other",
+          "folders": [
+            {
+              "name": "criminal",
+              "folders": [],
+              "files": []
+            },
+            {
+              "name": "influencial",
+              "folders": [],
+              "files": []
+            },
+            {
+              "name": "regular",
+              "folders": [],
+              "files": []
+            },
+            {
+              "name": "special",
+              "folders": [],
+              "files": []
+            }
+          ],
+          "files": []
+        },
+        {
+          "name": "villains",
+          "folders": [
+            {
+              "name": "active",
+              "folders": [],
+              "files": []
+            },
+            {
+              "name": "captured",
+              "folders": [],
+              "files": []
+            },
+            {
+              "name": "deceased",
+              "folders": [],
+              "files": [
+                "pixie.png:hidden3"
+              ]
+            },
+            {
+              "name": "inactive",
+              "folders": [],
+              "files": []
+            },
+            {
+              "name": "unknown",
+              "folders": [],
+              "files": []
+            }
+          ],
+          "files": []
+        }
+      ],
+      "files": []
+    },
+    {
+      "name": "secret",
+      "folders": [
+        {
+          "name": "class-1",
+          "folders": [],
+          "files": []
+        },
+        {
+          "name": "class-2",
+          "folders": [],
+          "files": []
+        },
+        {
+          "name": "class-3",
+          "folders": [],
+          "files": []
+        },
+        {
+          "name": "class-4",
+          "folders": [],
+          "files": []
+        },
+        {
+          "name": "class-5",
+          "folders": [],
+          "files": [
+            "awww.1.txt:hidden5,locked5",
+            "awww.jpg:hidden5,locked5",
+            "awww.mp3:hidden5,locked5",
+            "awww.txt:hidden5,locked5"
+          ]
+        }
+      ],
+      "files": []
+    },
+    {
+      "name": "technology",
+      "folders": [
+        {
+          "name": "alien",
+          "folders": [],
+          "files": []
+        },
+        {
+          "name": "allied",
+          "folders": [],
+          "files": []
+        },
+        {
+          "name": "anomalous",
+          "folders": [],
+          "files": [
+            "pixie.mp3:hidden5"
+          ]
+        },
+        {
+          "name": "hero",
+          "folders": [],
+          "files": []
+        },
+        {
+          "name": "hostile",
+          "folders": [],
+          "files": []
+        },
+        {
+          "name": "other",
+          "folders": [],
+          "files": []
+        },
+        {
+          "name": "underground",
+          "folders": [],
+          "files": []
+        },
+        {
+          "name": "villain",
+          "folders": [],
+          "files": []
+        }
+      ],
+      "files": []
+    },
+    {
+      "name": "vanguard",
+      "folders": [
+        {
+          "name": "administration",
+          "folders": [
+            {
+              "name": "investigations",
+              "folders": [],
+              "files": []
+            },
+            {
+              "name": "legal",
+              "folders": [],
+              "files": []
+            },
+            {
+              "name": "policies",
+              "folders": [],
+              "files": []
+            },
+            {
+              "name": "protocols",
+              "folders": [],
+              "files": []
+            }
+          ],
+          "files": []
+        },
+        {
+          "name": "logistics",
+          "folders": [
+            {
+              "name": "equipment",
+              "folders": [],
+              "files": []
+            },
+            {
+              "name": "finance",
+              "folders": [],
+              "files": []
+            },
+            {
+              "name": "research",
+              "folders": [],
+              "files": []
+            },
+            {
+              "name": "resources",
+              "folders": [],
+              "files": []
+            },
+            {
+              "name": "transportation",
+              "folders": [],
+              "files": []
+            }
+          ],
+          "files": []
+        },
+        {
+          "name": "operations",
+          "folders": [
+            {
+              "name": "aborted",
+              "folders": [],
+              "files": []
+            },
+            {
+              "name": "active",
+              "folders": [],
+              "files": []
+            },
+            {
+              "name": "completed",
+              "folders": [],
+              "files": []
+            },
+            {
+              "name": "discarded",
+              "folders": [],
+              "files": []
+            },
+            {
+              "name": "failed",
+              "folders": [],
+              "files": []
+            },
+            {
+              "name": "future",
+              "folders": [],
+              "files": []
+            }
+          ],
+          "files": []
+        },
+        {
+          "name": "personnel",
+          "folders": [
+            {
+              "name": "active",
+              "folders": [
+                {
+                  "name": "level1",
+                  "folders": [],
+                  "files": []
+                },
+                {
+                  "name": "level10",
+                  "folders": [],
+                  "files": []
+                },
+                {
+                  "name": "level11",
+                  "folders": [],
+                  "files": []
+                },
+                {
+                  "name": "level12",
+                  "folders": [],
+                  "files": [
+                    "12-1-truth.txt:hidden4,locked5",
+                    "12-1.md:hidden4,locked4",
+                    "12-1.txt:hidden4,locked4",
+                    "12-2-truth.txt:hidden4,locked5",
+                    "12-2.md:hidden4,locked4",
+                    "12-2.txt:hidden4,locked4",
+                    "12-3-truth.txt:hidden4,locked5",
+                    "12-3.md:hidden4,locked4",
+                    "12-3.txt:hidden4,locked4",
+                    "12-4-truth.txt:hidden4,locked5",
+                    "12-4.md:hidden4,locked4",
+                    "12-4.txt:hidden4,locked4",
+                    "12-5-truth.txt:hidden4,locked5",
+                    "12-5.md:hidden4,locked4",
+                    "12-5.txt:hidden4,locked4",
+                    "12-6-truth.txt:hidden4,locked5",
+                    "12-6.md:hidden4,locked4",
+                    "12-6.txt:hidden4,locked4",
+                    "12-7-truth.txt:hidden4,locked5",
+                    "12-7.md:hidden4,locked4",
+                    "12-7.txt:hidden4,locked4",
+                    "12-8-truth.txt:hidden4,locked5",
+                    "12-8.md:hidden4,locked4",
+                    "12-8.txt:hidden4,locked4",
+                    "12-9-truth.txt:hidden4,locked5",
+                    "12-9.md:hidden4,locked4",
+                    "12-9.txt:hidden4,locked4",
+                    "19-07-1880.txt:hidden4,locked4",
+                    "council-history.txt:hidden4,locked4",
+                    "council.txt:hidden4,locked3"
+                  ]
+                },
+                {
+                  "name": "level13",
+                  "folders": [],
+                  "files": [
+                    "01-01-1854.txt:hidden5,locked5",
+                    "15-04-1872.txt:hidden5,locked5",
+                    "870442-dir.txt:hidden5,locked5",
+                    "the-director.md:hidden5,locked5",
+                    "the-director.txt:hidden5,locked5"
+                  ]
+                },
+                {
+                  "name": "level2",
+                  "folders": [],
+                  "files": []
+                },
+                {
+                  "name": "level3",
+                  "folders": [],
+                  "files": []
+                },
+                {
+                  "name": "level4",
+                  "folders": [],
+                  "files": []
+                },
+                {
+                  "name": "level5",
+                  "folders": [],
+                  "files": []
+                },
+                {
+                  "name": "level6",
+                  "folders": [],
+                  "files": []
+                },
+                {
+                  "name": "level7",
+                  "folders": [],
+                  "files": []
+                },
+                {
+                  "name": "level8",
+                  "folders": [],
+                  "files": []
+                },
+                {
+                  "name": "level9",
+                  "folders": [],
+                  "files": []
+                }
+              ],
+              "files": []
+            },
+            {
+              "name": "candidates",
+              "folders": [
+                {
+                  "name": "in-training",
+                  "folders": [],
+                  "files": []
+                },
+                {
+                  "name": "potential",
+                  "folders": [],
+                  "files": []
+                },
+                {
+                  "name": "rejected",
+                  "folders": [],
+                  "files": []
+                }
+              ],
+              "files": []
+            },
+            {
+              "name": "former",
+              "folders": [
+                {
+                  "name": "deceased",
+                  "folders": [],
+                  "files": []
+                },
+                {
+                  "name": "defected",
+                  "folders": [],
+                  "files": []
+                },
+                {
+                  "name": "fired",
+                  "folders": [],
+                  "files": []
+                },
+                {
+                  "name": "missing",
+                  "folders": [],
+                  "files": []
+                },
+                {
+                  "name": "other",
+                  "folders": [],
+                  "files": []
+                },
+                {
+                  "name": "retired",
+                  "folders": [],
+                  "files": []
+                }
+              ],
+              "files": []
+            }
+          ],
+          "files": []
+        },
+        {
+          "name": "rulebook",
+          "folders": [],
+          "files": []
+        },
+        {
+          "name": "sites",
+          "folders": [],
+          "files": []
+        },
+        {
+          "name": "technology",
+          "folders": [
+            {
+              "name": "autonomous",
+              "folders": [],
+              "files": []
+            },
+            {
+              "name": "infrastructure",
+              "folders": [],
+              "files": []
+            },
+            {
+              "name": "prototypes",
+              "folders": [],
+              "files": [
+                "pixie.mp3:hidden4"
+              ]
+            },
+            {
+              "name": "support",
+              "folders": [],
+              "files": []
+            },
+            {
+              "name": "vehicles",
+              "folders": [
+                {
+                  "name": "air",
+                  "folders": [
+                    {
+                      "name": "behemoth",
+                      "folders": [],
+                      "files": []
+                    },
+                    {
+                      "name": "large",
+                      "folders": [],
+                      "files": []
+                    },
+                    {
+                      "name": "medium",
+                      "folders": [],
+                      "files": []
+                    },
+                    {
+                      "name": "small",
+                      "folders": [],
+                      "files": []
+                    }
+                  ],
+                  "files": []
+                },
+                {
+                  "name": "land",
+                  "folders": [
+                    {
+                      "name": "behemoth",
+                      "folders": [],
+                      "files": []
+                    },
+                    {
+                      "name": "large",
+                      "folders": [],
+                      "files": []
+                    },
+                    {
+                      "name": "medium",
+                      "folders": [],
+                      "files": []
+                    },
+                    {
+                      "name": "small",
+                      "folders": [],
+                      "files": []
+                    }
+                  ],
+                  "files": []
+                },
+                {
+                  "name": "other",
+                  "folders": [],
+                  "files": []
+                },
+                {
+                  "name": "sea",
+                  "folders": [
+                    {
+                      "name": "submersible",
+                      "folders": [
+                        {
+                          "name": "behemoth",
+                          "folders": [],
+                          "files": []
+                        },
+                        {
+                          "name": "large",
+                          "folders": [],
+                          "files": []
+                        },
+                        {
+                          "name": "medium",
+                          "folders": [],
+                          "files": []
+                        },
+                        {
+                          "name": "small",
+                          "folders": [],
+                          "files": []
+                        }
+                      ],
+                      "files": []
+                    },
+                    {
+                      "name": "surface",
+                      "folders": [
+                        {
+                          "name": "behemoth",
+                          "folders": [],
+                          "files": []
+                        },
+                        {
+                          "name": "large",
+                          "folders": [],
+                          "files": []
+                        },
+                        {
+                          "name": "medium",
+                          "folders": [],
+                          "files": []
+                        },
+                        {
+                          "name": "small",
+                          "folders": [],
+                          "files": []
+                        }
+                      ],
+                      "files": []
+                    }
+                  ],
+                  "files": []
+                },
+                {
+                  "name": "space",
+                  "folders": [
+                    {
+                      "name": "behemoth",
+                      "folders": [],
+                      "files": []
+                    },
+                    {
+                      "name": "beyonder",
+                      "folders": [],
+                      "files": []
+                    },
+                    {
+                      "name": "large",
+                      "folders": [],
+                      "files": []
+                    },
+                    {
+                      "name": "medium",
+                      "folders": [],
+                      "files": []
+                    },
+                    {
+                      "name": "small",
+                      "folders": [],
+                      "files": []
+                    }
+                  ],
+                  "files": []
+                }
+              ],
+              "files": []
+            },
+            {
+              "name": "weapons",
+              "folders": [
+                {
+                  "name": "extreme",
+                  "folders": [],
+                  "files": []
+                },
+                {
+                  "name": "lethal",
+                  "folders": [],
+                  "files": []
+                },
+                {
+                  "name": "non-lethal",
+                  "folders": [],
+                  "files": []
+                }
+              ],
+              "files": []
+            }
+          ],
+          "files": []
+        }
+      ],
+      "files": []
+    }
+  ],
+  "files": []
+}
